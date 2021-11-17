@@ -7,10 +7,21 @@ return require('packer').startup(function()
    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'airblade/vim-rooter' -- roots project
+
+    use 'mhinz/vim-startify'
+
+
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+    }
+
    -- themes
     use 'arcticicestudio/nord-vim'
     use 'itchyny/lightline.vim' -- Fancier statusline
-   
+    use 'kyazdani42/nvim-web-devicons' -- nice icons
+
     -- tpope
     use 'tpope/vim-commentary'-- easy commentary
     use 'tpope/vim-surround'-- easy surrounding
@@ -19,7 +30,6 @@ return require('packer').startup(function()
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
-    use 'ludovicchabant/vim-gutentags' -- Automatic tags management
 
    -- fuzzyfinder
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -35,13 +45,20 @@ return require('packer').startup(function()
    -- lsp server
     use 'neovim/nvim-lspconfig'
 
+
    -- completion
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
 
     -- snippets
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    use "rafamadriz/friendly-snippets"
 
-    use 'folke/which-key.nvim'
+    use 'folke/which-key.nvim' -- key bindings
+
+    -- USES A LONG TIME TO SAVE!
+    -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
+    -- use 'glepnir/lspsaga.nvim'
+    -- use {'akinsho/bufferline.nvim', requires ='kyazdani42/nvim-web-devicons'}
 end)

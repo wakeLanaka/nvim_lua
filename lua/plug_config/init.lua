@@ -9,3 +9,7 @@ require('plug_config/treesitter')
 require('plug_config/lsp')
 
 require('plug_config/which_key')
+
+require('plug_config/startify')
+
+require('plug_config/nvim_tree')

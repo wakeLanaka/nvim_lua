@@ -1,6 +1,4 @@
-vim.o.completeopt="menuone,noinsert,noselect" --somehow noinsert is not working
-
-local luasnip = require 'luasnip'
+vim.o.completeopt="menuone,noselect" --somehow noinsert is not working
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -8,7 +6,7 @@ local cmp = require'cmp'
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
@@ -24,16 +22,16 @@ cmp.setup {
     },
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
-        cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true, }
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+        cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, }
+      elseif vim.fn["vsnip#jumpable"](1) then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
       else
         fallback()
       end
     end,
     ['<S-Tab>'] = function(fallback)
-      if luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      if vim.fn["vsnip#jumpable"](-1) then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-jump-prev)", true, true, true), "")
       else
         fallback()
       end
@@ -41,6 +39,6 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'vsnip' },
   },
 }

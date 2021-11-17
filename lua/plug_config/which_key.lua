@@ -19,7 +19,9 @@ local wk = require'which-key'
 wk.register({
   f = {
     name = "find",
+    c = {"<cmd>Telescope colorscheme<cr>","colorscheme"},
     b = {"<cmd>Telescope buffers<cr>","buffers"},
+    B = {"<cmd>Telescope marks<cr>","marks"},
     o = {"<cmd>Telescope oldfiles<cr>", "old files"},
     t = {"<cmd>Telescope tags<cr>", "tags"},
     w = {"<cmd>Telescope grep_string<cr>", "word under cursor"},
@@ -39,6 +41,10 @@ wk.register({
     d = {"<cmd>Git diff<cr>", "diff"},
     g = {"<cmd>Git<cr>", "summary"},
   }
+},{prefix = "<leader>"})
+
+wk.register({
+  h = {"<cmd>Startify<cr>","startify"},
 },{prefix = "<leader>"})
 
 wk.register({
@@ -76,5 +82,15 @@ wk.register({
     S = {"<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>","symbol"},
     t = {"<cmd>Telescope lsp_type_definitions<cr>", "diagnostics"},
     w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "workspace diagnostics"},
+  }
+},{prefix = "<leader>"})
+
+wk.register({
+  s = {
+    name = "session",
+    c = {"<cmd>SClose<cr>","close"},
+    d = {"<cmd>SDelete!<cr>","delete"},
+    l = {"<cmd>SLoad<cr>","load"},
+    s = {"<cmd>SSave!<cr>","save"},
   }
 },{prefix = "<leader>"})

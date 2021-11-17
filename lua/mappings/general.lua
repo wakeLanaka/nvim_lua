@@ -48,6 +48,13 @@ map('n', '<m-8>', '8gt', {noremap = true})
 map('n', '<m-9>', '9gt', {noremap = true})
 map('n', '<c-t>', ':tabnew<cr>', {noremap = true})
 
+-- move in bufferline
+--map('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', {noremap = true})
+--map('n', '<s-tab>', '<cmd>BufferLineCyclePrev<cr>', {noremap = true})
+
+-- open explorer
+map('n', '<c-e>', "<cmd> lua require'nvim-tree'.toggle()<cr>", {noremap = true})
+
 -- save file
 map('n', '<c-s>', ':w<cr>', {noremap = true})
 
@@ -74,6 +81,9 @@ map('c', '<m-w>', '<s-right>', {noremap = true})
 map('c', '<m-h>', '<left>', {noremap = true})
 map('c', '<m-l>', '<right>', {noremap = true})
 
+-- LSPSAGA
+map('n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<cr>", {noremap = true})
+
 -- UNBIND
 map('n', 'Q', '<nop>', {noremap = true})
 map('n', '<up>', '<nop>', {noremap = true})
@@ -85,8 +95,6 @@ map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
 map('i', '<c-k>', '<nop>', {noremap = true})
-
-
 
 -- TODO does not work
 -- trick to trigger wildmenu with <c-space>

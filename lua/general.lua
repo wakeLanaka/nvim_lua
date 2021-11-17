@@ -4,6 +4,7 @@ local exec = vim.api.nvim_exec 	-- execute Vimscript
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.o.mouse = 'a' -- allows working with mouse
 
+vim.opt.switchbuf = 'usetab'
 vim.wo.number = true -- display line numbers
 vim.opt.numberwidth = 5 -- amount of columns for numbers
 vim.opt.foldcolumn = '1' -- reserve 1 column for folds
