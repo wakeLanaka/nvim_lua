@@ -20,22 +20,22 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, }
-      elseif vim.fn["vsnip#jumpable"](1) then
+      elseif vim.fn["vsnip#available"]() == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
       else
         fallback()
       end
-    end,
-    ['<S-Tab>'] = function(fallback)
+    end, {'i', 's'}),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       if vim.fn["vsnip#jumpable"](-1) then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-jump-prev)", true, true, true), "")
       else
         fallback()
       end
-    end,
+    end, {'i','s'}),
   },
   sources = {
     { name = 'nvim_lsp' },
