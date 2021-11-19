@@ -1,4 +1,4 @@
-vim.o.completeopt="menuone" --somehow noinsert is not working
+vim.o.completeopt="menuone,noselect,noinsert" --somehow noinsert is not working
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -18,7 +18,7 @@ cmp.setup {
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm { 
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false,
     },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then

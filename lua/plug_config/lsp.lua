@@ -55,17 +55,14 @@ end
 
 
 -- DIAGNOSTICS SETTINGS
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = true,
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  -- {
+  --   prefix = '●', -- Could be '■', '▎', 'x'
+  -- }
+  virtual_text = false,
   signs = true,
   underline = true,
   update_in_insert = false,
-})
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = {
-    prefix = '●', -- Could be '■', '▎', 'x'
-  }
 })
 
 -- LSP SERVER CONFIG
@@ -74,7 +71,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
-local servers = {'pyright', 'tsserver', "csharp_ls" }
+local servers = {'pyright', 'tsserver', "csharp_ls", "texlab" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

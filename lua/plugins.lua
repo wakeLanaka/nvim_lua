@@ -53,4 +53,6 @@ return require('packer').startup(function()
     use "rafamadriz/friendly-snippets"
 
     use 'folke/which-key.nvim' -- key bindings
+
+    use 'lervag/vimtex'
 end)
