@@ -7,10 +7,7 @@ return require('packer').startup(function()
    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'airblade/vim-rooter' -- roots project
-
     use 'mhinz/vim-startify'
-
 
     use {
         'kyazdani42/nvim-tree.lua',
@@ -56,9 +53,4 @@ return require('packer').startup(function()
     use "rafamadriz/friendly-snippets"
 
     use 'folke/which-key.nvim' -- key bindings
-
-    -- USES A LONG TIME TO SAVE!
-    -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-    -- use 'glepnir/lspsaga.nvim'
-    -- use {'akinsho/bufferline.nvim', requires ='kyazdani42/nvim-web-devicons'}
 end)

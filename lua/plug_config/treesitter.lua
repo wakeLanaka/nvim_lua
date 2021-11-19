@@ -58,7 +58,7 @@ require('nvim-treesitter.configs').setup {
     smart_rename = {
       enable = true,
       keymaps = {
-        smart_rename = '<leader>lR',
+        smart_rename = '<leader>lr',
       }
     },
   },

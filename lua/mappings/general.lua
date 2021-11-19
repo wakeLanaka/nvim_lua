@@ -83,6 +83,7 @@ map('c', '<m-l>', '<right>', {noremap = true})
 
 -- LSPSAGA
 map('n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<cr>", {noremap = true})
+map('n', 'K', ':Lspsaga hover_doc<cr>', {noremap = true, silent = true})
 
 -- UNBIND
 map('n', 'Q', '<nop>', {noremap = true})

@@ -1,4 +1,4 @@
-vim.o.completeopt="menuone,noselect" --somehow noinsert is not working
+vim.o.completeopt="menuone" --somehow noinsert is not working
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -22,7 +22,7 @@ cmp.setup {
     },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, }
+        cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true, }
       elseif vim.fn["vsnip#available"]() == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
       else

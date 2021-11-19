@@ -13,3 +13,5 @@ require('plug_config/which_key')
 require('plug_config/startify')
 
 require('plug_config/nvim_tree')
+
+require('plug_config/vsnip')
