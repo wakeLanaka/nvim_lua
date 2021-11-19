@@ -1,15 +1,16 @@
 local nvim_lsp = require 'lspconfig'
+local colors = require("tokyonight.colors").setup({})
 
 -- OWN LSP ICONS
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
 for type, icon in pairs(signs) do
     local hl = "LspDiagnosticsSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- CHANGE INFORMATION DISPLAY. E.G. hover
-vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=#2e3440]]
-vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=#2e3440]]
+vim.cmd [[autocmd ColorScheme * highlight NormalFloat guibg=colors.bg_dark]]
+vim.cmd [[autocmd ColorScheme * highlight FloatBorder guifg=white guibg=colors.bg_dark]]
 
 local border = {
   {"╭", "FloatBorder"},
@@ -64,6 +65,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   underline = true,
   update_in_insert = false,
 })
+
 
 -- LSP SERVER CONFIG
 -- nvim-cmp supports additional completion capabilities

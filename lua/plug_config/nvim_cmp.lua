@@ -1,7 +1,36 @@
 vim.o.completeopt="menuone,noselect,noinsert" --somehow noinsert is not working
 
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "華",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "Mo",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = " ",
+  Color = "",
+  File = " ",
+  Reference = " ",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup {
   snippet = {
@@ -40,5 +69,34 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
+    { name = 'treesitter' },
+    { name = 'path' },{
+      name = 'buffer',
+      opts = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
+    { name = 'spell' },
+  },
+  documentation = {
+    border = { "╭","─","╮","│","╯","─","╰","│" },
+  },
+  formatting = {
+    kind_icons = kind_icons,
+    format = function(entry, vim_item)
+      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.menu = ({
+        nvim_lsp = " ",
+        nvim_lua = " ",
+        treesitter = " ",
+        path = " ",
+        buffer = "﬘ ",
+        bash = " ",
+        vsnip = " ",
+      })[entry.source.name]
+      return vim_item
+    end,
   },
 }

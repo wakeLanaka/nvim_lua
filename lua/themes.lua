@@ -1,12 +1,33 @@
 vim.opt.termguicolors = true -- enable 24-bit RGB colors
 
-vim.cmd[[colorscheme nord]]
+-- TOKYONIGHT CONFIG
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
+vim.cmd[[colorscheme tokyonight]] --nord/nightfly
 
--- STATUSBAR
-
-vim.g.lightline = {
-  colorscheme = 'nord',
-  active = { left = { { 'mode', 'paste' }, { 'gitbranch', 'readonly', 'filename', 'modified' } } },
-  component_function = { gitbranch = 'fugitive#head' },
+require'lualine'.setup {
+  options = {
+    icons_enabled = true,
+    theme = 'tokyonight',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff'},
+    lualine_c = {'filename'},
+    lualine_x = {'filetype'},
+    lualine_y = {
+      {
+        'diagnostics', 
+        sources={'nvim_lsp'},
+        symbols = {error = ' ', warn = ' ', info = '', hint = ' '},
+        always_visible = false
+      }
+    },
+    lualine_z = {'location'},
+  },
+  tabline = {},
+  extensions = {}
 }

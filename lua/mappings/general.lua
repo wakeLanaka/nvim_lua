@@ -48,10 +48,6 @@ map('n', '<m-8>', '8gt', {noremap = true})
 map('n', '<m-9>', '9gt', {noremap = true})
 map('n', '<c-t>', ':tabnew<cr>', {noremap = true})
 
--- move in bufferline
---map('n', '<tab>', '<cmd>BufferLineCycleNext<cr>', {noremap = true})
---map('n', '<s-tab>', '<cmd>BufferLineCyclePrev<cr>', {noremap = true})
-
 -- open explorer
 map('n', '<c-e>', "<cmd> lua require'nvim-tree'.toggle()<cr>", {noremap = true})
 
@@ -80,10 +76,6 @@ map('c', '<m-b>', '<s-left>', {noremap = true})
 map('c', '<m-w>', '<s-right>', {noremap = true})
 map('c', '<m-h>', '<left>', {noremap = true})
 map('c', '<m-l>', '<right>', {noremap = true})
-
--- LSPSAGA
-map('n', 'gh', "<cmd>lua require'lspsaga.provider'.lsp_finder()<cr>", {noremap = true})
-map('n', 'K', ':Lspsaga hover_doc<cr>', {noremap = true, silent = true})
 
 -- UNBIND
 map('n', 'Q', '<nop>', {noremap = true})

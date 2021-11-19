@@ -16,7 +16,13 @@ return require('packer').startup(function()
 
    -- themes
     use 'arcticicestudio/nord-vim'
-    use 'itchyny/lightline.vim' -- Fancier statusline
+    use 'bluz71/vim-nightfly-guicolors'
+    use 'folke/tokyonight.nvim'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
     use 'kyazdani42/nvim-web-devicons' -- nice icons
 
     -- tpope
@@ -46,6 +52,10 @@ return require('packer').startup(function()
    -- completion
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'onsails/lspkind-nvim'
 
     -- snippets
     use 'hrsh7th/cmp-vsnip'
