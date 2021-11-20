@@ -14,6 +14,8 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons',
     }
 
+    use 'windwp/nvim-autopairs'
+
    -- themes
     use 'arcticicestudio/nord-vim'
     use 'bluz71/vim-nightfly-guicolors'
@@ -36,6 +38,7 @@ return require('packer').startup(function()
 
    -- fuzzyfinder
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
    -- vim window navigation for tmux
     use 'christoomey/vim-tmux-navigator'

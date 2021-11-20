@@ -1,4 +1,4 @@
-vim.opt.termguicolors = true -- enable 24-bit RGB colors
+vim.opt.termguicolors = true 
 
 -- TOKYONIGHT CONFIG
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }

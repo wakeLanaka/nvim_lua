@@ -17,3 +17,5 @@ require('plug_config/nvim_tree')
 require('plug_config/vsnip')
 
 require('plug_config/vimtex')
+
+require('plug_config/autopairs')
