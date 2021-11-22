@@ -36,16 +36,16 @@ require('nvim-treesitter.configs').setup {
       enable = true,
       set_jumps = true,
       goto_next_start = {
-        ['<leader>ljm'] = '@function.outer',
-        ['<leader>ljc'] = '@class.outer',
+        -- ['<leader>ljm'] = '@function.outer',
+        -- ['<leader>ljc'] = '@class.outer',
       },
       goto_next_end = {
         [']M'] = '@function.outer',
         [']]'] = '@class.outer',
       },
       goto_previous_start = {
-        ['<leader>ljM'] = '@function.outer',
-        ['<leader>ljC'] = '@class.outer',
+        -- ['<leader>ljM'] = '@function.outer',
+        -- ['<leader>ljC'] = '@class.outer',
       },
       goto_previous_end = {
         ['[M'] = '@function.outer',

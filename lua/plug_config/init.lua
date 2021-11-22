@@ -19,3 +19,5 @@ require('plug_config/vsnip')
 require('plug_config/vimtex')
 
 require('plug_config/autopairs')
+
+require('plug_config/dashboard')

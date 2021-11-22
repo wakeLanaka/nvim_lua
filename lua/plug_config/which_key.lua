@@ -1,3 +1,5 @@
+local wk = require'which-key'
+
 require'which-key'.setup{
   plugins = {
     spelling = {
@@ -12,9 +14,9 @@ require'which-key'.setup{
   }, triggers_blacklist = {
     i = {"j", "k"},
     v = {"j", "k"},
+    n = {"d", "c"},
   }
 }
-local wk = require'which-key'
 
 wk.register({
   f = {
@@ -39,12 +41,13 @@ wk.register({
     b = {"<cmd>Git blame<cr>", "blame"},
     c = {"<cmd>Git commit<cr>", "commit"},
     d = {"<cmd>Git diff<cr>", "diff"},
+    h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
     g = {"<cmd>Git<cr>", "summary"},
   }
 },{prefix = "<leader>"})
 
 wk.register({
-  h = {"<cmd>Startify<cr>","startify"},
+  h = {"<cmd>Dashboard<cr>","home"},
 },{prefix = "<leader>"})
 
 wk.register({
@@ -69,9 +72,16 @@ wk.register({
 wk.register({
   s = {
     name = "session",
-    c = {"<cmd>SClose<cr>","close"},
-    d = {"<cmd>SDelete!<cr>","delete"},
-    l = {"<cmd>SLoad<cr>","load"},
-    s = {"<cmd>SSave!<cr>","save"},
+    l = {"<cmd>SessionLoad<cr>","load"},
+    s = {"<cmd>SessionSave<cr>","save"},
+  }
+},{prefix = "<leader>"})
+
+wk.register({
+  v = {
+    name = "vimux",
+    c = {"<cmd>VimuxCloseRunner<cr>","close"},
+    l = {"<cmd>VimuxRunLastCommand<cr>","last"},
+    p = {"<cmd>VimuxPromptCommand<cr>","prompt"},
   }
 },{prefix = "<leader>"})

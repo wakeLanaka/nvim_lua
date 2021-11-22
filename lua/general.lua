@@ -8,7 +8,7 @@ vim.opt.switchbuf = 'usetab'
 vim.wo.number = true -- display line numbers
 vim.opt.numberwidth = 5 -- amount of columns for numbers
 vim.opt.foldcolumn = '1' -- reserve 1 column for folds
-vim.opt.showtabline = 2 -- always display tabs
+vim.opt.showtabline = 0 -- never display tabs
 vim.opt.showmode = false
 
 vim.opt.colorcolumn = '80' -- display 80th column

@@ -51,3 +51,7 @@ require'nvim-tree'.setup {
     }
   }
 }
+
+vim.cmd[[
+autocmd VimEnter * highlight NvimTreeGitDirty guifg=red
+]]
