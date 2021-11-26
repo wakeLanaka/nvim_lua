@@ -8,7 +8,12 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
+
+map('n', '<leader>e', ':e $MYVIMRC<cr>', {noremap = true})
+
 map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true})
+map('n', '<leader>-', ':source $MYVIMRC<cr>', {noremap = true})
 
 -- map jj to esc
 map('i', 'jj', '<esc>', {noremap = true})
@@ -21,6 +26,14 @@ map('n', '<c-j>', '<c-w>j', {noremap = true})
 map('n', '<c-k>', '<c-w>k', {noremap = true})
 map('n', '<c-l>', '<c-w>l', {noremap = true})
 map('n', '<c-c>', '<c-w>c', {noremap = true})
+map('i', '<c-h>', '<esc><c-w>h', {noremap = true})
+map('i', '<c-j>', '<esc><c-w>j', {noremap = true})
+map('i', '<c-k>', '<esc><c-w>k', {noremap = true})
+map('i', '<c-l>', '<esc><c-w>l', {noremap = true})
+
+-- search
+map('n', '*', '*N', {noremap = true})
+
 
 -- allows to move through display lines
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
@@ -87,7 +100,7 @@ map('i', '<up>', '<nop>', {noremap = true})
 map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
-map('i', '<c-k>', '<nop>', {noremap = true})
+-- map('i', '<c-k>', '<nop>', {noremap = true})
 
 -- TODO does not work
 -- trick to trigger wildmenu with <c-space>

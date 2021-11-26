@@ -21,3 +21,5 @@ require('plug_config/vimtex')
 require('plug_config/autopairs')
 
 require('plug_config/dashboard')
+
+require('plug_config/lualine')

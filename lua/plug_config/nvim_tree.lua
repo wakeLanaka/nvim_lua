@@ -51,6 +51,21 @@ require'nvim-tree'.setup {
     }
   }
 }
+vim.cmd [[
+let g:nvim_tree_icons = {
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': " ",
+    \   'deleted': "",
+    \   'ignored': "◌"
+    \   },
+    \ }
+
+]]
+
 
 vim.cmd[[
 autocmd VimEnter * highlight NvimTreeGitDirty guifg=red

@@ -11,6 +11,8 @@ return require('packer').startup(function()
 
     use 'preservim/vimux'
 
+    use 'kyazdani42/nvim-web-devicons' -- nice icons
+
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
@@ -18,21 +20,24 @@ return require('packer').startup(function()
 
     use 'windwp/nvim-autopairs'
 
+    use '~/github/nvim_lua/themes/rose-theme'
+
    -- themes
-    use 'arcticicestudio/nord-vim'
-    use 'bluz71/vim-nightfly-guicolors'
-    use 'folke/tokyonight.nvim'
+    -- use 'arcticicestudio/nord-vim'
+    -- use 'bluz71/vim-nightfly-guicolors'
+    -- use 'folke/tokyonight.nvim'
+
     use {
       'nvim-lualine/lualine.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
-    use 'kyazdani42/nvim-web-devicons' -- nice icons
 
     -- tpope
     use 'tpope/vim-commentary'-- easy commentary
     use 'tpope/vim-surround'-- easy surrounding
     use 'tpope/vim-repeat'-- allows to repeat plugin mapppings with '.'
+    use 'tpope/vim-unimpaired'
     -- git
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
