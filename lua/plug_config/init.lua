@@ -6,6 +6,7 @@ require('plug_config/gitsigns')
 
 require('plug_config/treesitter')
 
+require('plug_config/lspinstaller')
 require('plug_config/lsp')
 
 require('plug_config/which_key')
@@ -20,6 +21,6 @@ require('plug_config/vimtex')
 
 require('plug_config/autopairs')
 
-require('plug_config/dashboard')
+-- require('plug_config/dashboard')
 
 require('plug_config/lualine')

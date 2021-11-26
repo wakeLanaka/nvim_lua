@@ -7,8 +7,6 @@ return require('packer').startup(function()
    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'glepnir/dashboard-nvim'
-
     use 'preservim/vimux'
 
     use 'kyazdani42/nvim-web-devicons' -- nice icons
@@ -20,13 +18,8 @@ return require('packer').startup(function()
 
     use 'windwp/nvim-autopairs'
 
+    -- theme
     use '~/github/nvim_lua/themes/rose-theme'
-
-   -- themes
-    -- use 'arcticicestudio/nord-vim'
-    -- use 'bluz71/vim-nightfly-guicolors'
-    -- use 'folke/tokyonight.nvim'
-
     use {
       'nvim-lualine/lualine.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -56,7 +49,10 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
    -- lsp server
-    use 'neovim/nvim-lspconfig'
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
+    }
 
 
    -- completion
@@ -70,9 +66,15 @@ return require('packer').startup(function()
     -- snippets
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-    use "rafamadriz/friendly-snippets"
 
     use 'folke/which-key.nvim' -- key bindings
 
     use 'lervag/vimtex'
+
+    -- use 'glepnir/dashboard-nvim'
+   -- themes
+    -- use 'arcticicestudio/nord-vim'
+    -- use 'bluz71/vim-nightfly-guicolors'
+    -- use 'folke/tokyonight.nvim'
+    -- use "rafamadriz/friendly-snippets"
 end)

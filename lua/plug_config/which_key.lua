@@ -53,9 +53,9 @@ wk.register({
 wk.register({
   l = {
     name = "lsp",
-    a = {"code actions"},
-    d = {"line diagnostics"},
-    f = {"format file"},
+    a = {"<cmd>lua vim.lsp.buf.code_action()<cr>","code actions"},
+    d = {"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>","line diagnostics"},
+    f = {"<cmd>lua vim.lsp.buf.formatting()<CR>","format file"},
     p = {
       name = "parameter",
       h = {"left"},
@@ -63,7 +63,7 @@ wk.register({
     },
     r = {"rename"},
     R = {"<cmd>Telescope lsp_references<cr>","references"},
-    s = {"signature help"},
+    s = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","signature help"},
     t = {"<cmd>Telescope lsp_type_definitions<cr>", "type definition"},
     w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "workspace diagnostics"},
   }

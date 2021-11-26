@@ -34,6 +34,14 @@ map('i', '<c-l>', '<esc><c-w>l', {noremap = true})
 -- search
 map('n', '*', '*N', {noremap = true})
 
+-- lsp mappings
+local opts = {noremap = true, silent = true}
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
+map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 
 -- allows to move through display lines
 vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
