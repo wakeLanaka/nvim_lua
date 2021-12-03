@@ -1,0 +1,45 @@
+{
+  "itemize" : {
+    "prefix": ["itemi"],
+    "body": [
+      "\\begin{itemize}",
+      "\t\\item $0",
+      "\\end{itemize}"
+    ]
+  },
+  "enumerate" : {
+    "prefix": ["enum"],
+    "body": [
+      "\\begin{enumerate}",
+      "\t\\item $0",
+      "\\end{enumerate}"
+    ]
+  },
+  "section" : {
+    "prefix": ["sect", "\\sect"],
+    "body": [
+      "\\section{$1}",
+      "$0"
+    ]
+  },
+  "subsection" : {
+    "prefix": ["subsect"],
+    "body": [
+      "\\subsection{$1}",
+      "$0"
+    ]
+  },
+  "subsubsection" : {
+    "prefix": ["subsubsect"],
+    "body": [
+      "\\subsubsection{$1}",
+      "$0"
+    ]
+  },
+  "textcolorRED" : {
+    "prefix": ["tcr"],
+    "body": [
+      "\\textcolor{red}{$0}"
+    ]
+  }
+}

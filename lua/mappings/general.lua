@@ -9,6 +9,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 
+-- Standard like this. Somehow tpope plugins do change this!
+-- map('n', 'y', '"0y', {noremap = true})
 
 map('n', '<leader>e', ':e $MYVIMRC<cr>', {noremap = true})
 
@@ -33,6 +35,8 @@ map('i', '<c-l>', '<esc><c-w>l', {noremap = true})
 
 -- search
 map('n', '*', '*N', {noremap = true})
+map('n', '&', ':&&<cr>', {noremap = true})
+map('x', '&', ':&&<cr>', {noremap = true})
 
 -- lsp mappings
 local opts = {noremap = true, silent = true}
@@ -44,8 +48,8 @@ map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
 map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 
 -- allows to move through display lines
-vim.api.nvim_set_keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 map('n', '^', 'g^', {noremap = true})
 map('n', '0', 'g0', {noremap = true})
 map('n', '$', 'g$', {noremap = true})
@@ -55,7 +59,7 @@ map('c', '<c-h>', '<c-left>', {noremap = true})
 map('c', '<c-l>', '<c-right>', {noremap = true})
 
 -- Y yank until the end of line
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+map('n', 'Y', 'y$', { noremap = true })
 
 -- Tab navigation
 map('n', '<m-1>', '1gt', {noremap = true})
@@ -70,16 +74,17 @@ map('n', '<m-9>', '9gt', {noremap = true})
 map('n', '<c-t>', ':tabnew<cr>', {noremap = true})
 
 -- open explorer
-map('n', '<c-e>', "<cmd> lua require'nvim-tree'.toggle()<cr>", {noremap = true})
+-- map('n', '<c-e>', '<cmd>Lexplore<cr>', {noremap = true})
+map('n', '<c-e>', '<cmd>NvimTreeToggle<cr>', {noremap = true})
 
 -- save file
 map('n', '<c-s>', ':w<cr>', {noremap = true})
 
 -- shift mappings
 map('v', '<', '<gv', {noremap = true})
-map('n', '<', '<<', {noremap = true})
+-- map('n', '<', '<<', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
-map('n', '>', '>>', {noremap = true})
+-- map('n', '>', '>>', {noremap = true})
 
 -- FOLDS
 map('n', 'zt', 'za', {noremap = true})
@@ -114,8 +119,3 @@ map('i', '<right>', '<nop>', {noremap = true})
 -- trick to trigger wildmenu with <c-space>
 -- vim.opt.wildcharm = vim.fn.char2nr('^Z')
 -- map('c', '<c-space>', '<c-z>', {expr = true})
-
--- exec([[
--- set wildcharm=<c-z>
--- cnoremap <expr><C-space> "\<C-z>"
--- ]], false)

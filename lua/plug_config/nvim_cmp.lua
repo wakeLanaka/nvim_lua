@@ -1,31 +1,29 @@
-vim.o.completeopt="menuone,noselect,noinsert" --somehow noinsert is not working
-
 local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
+  Text = "Txt", --"",
+  Method = "Func", --"",
+  Function = "Func",--"",
   Constructor = "華",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "Mo",
-  Property = "ﰠ",
-  Unit = "",
-  Value = "",
-  Enum = "",
+  Field = "Field",--"",
+  Variable = "Var",--"",
+  Class = "Class",--"ﴯ",
+  Interface = "Int",--"",
+  Module = "Module",--"Mo",
+  Property = "Prop",--"ﰠ",
+  Unit = "Unit",--"",
+  Value = "Val",--"",
+  Enum = "Enum",--"",
   Keyword = "",
   Snippet = " ",
   Color = "",
   File = " ",
-  Reference = " ",
+  Reference = "Ref",--" ",
   Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = ""
+  EnumMember = "EnumMem",--"",
+  Constant = "Const",--"",
+  Struct = "Struct",--"",
+  Event = "Event",--"",
+  Operator = "Op",--"",
+  TypeParameter = "Type",--""
 }
 
 -- Setup nvim-cmp.
@@ -42,13 +40,23 @@ cmp.setup {
     end,
   },
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-p>'] = cmp.mapping(function() 
+      cmp.select_prev_item({behavior = cmp.SelectBehavior.Select })
+    end, {'i', 's', 'c'}),
+    ['<C-n>'] = cmp.mapping(function()
+      cmp.select_next_item({behavior = cmp.SelectBehavior.Select })
+    end, {'i', 's', 'c'}),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<C-c>'] = cmp.mapping.abort(),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    ['<C-c>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['<CR>'] = cmp.mapping.confirm { 
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
@@ -61,7 +69,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, {'i', 's'}),
+    end, {'i', 's', 'c'}),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if vim.fn["vsnip#jumpable"](-1) then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-jump-prev)", true, true, true), "")
@@ -76,7 +84,7 @@ cmp.setup {
     { name = 'treesitter' },
     { name = 'path' },{
       name = 'buffer',
-      opts = {
+      options = {
         get_bufnrs = function()
           return vim.api.nvim_list_bufs()
         end,
@@ -103,4 +111,23 @@ cmp.setup {
       return vim_item
     end,
   },
+ completion = {
+    completeopt = 'menu,menuone,noinsert'
+  }
 }
+
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })

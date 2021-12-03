@@ -7,15 +7,6 @@ return require('packer').startup(function()
    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'preservim/vimux'
-
-    use 'kyazdani42/nvim-web-devicons' -- nice icons
-
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-    }
-
     use 'windwp/nvim-autopairs'
 
     -- theme
@@ -25,12 +16,20 @@ return require('packer').startup(function()
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+    }
 
     -- tpope
     use 'tpope/vim-commentary'-- easy commentary
+    use 'tpope/vim-dispatch'-- build and test dispatch
     use 'tpope/vim-surround'-- easy surrounding
     use 'tpope/vim-repeat'-- allows to repeat plugin mapppings with '.'
+    use 'tpope/vim-vinegar'-- netrw addons
     use 'tpope/vim-unimpaired'
+    use 'tpope/vim-abolish'
+
     -- git
     use 'tpope/vim-fugitive' -- Git commands in nvim
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -49,10 +48,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
    -- lsp server
-    use {
-        'neovim/nvim-lspconfig',
-        'williamboman/nvim-lsp-installer',
-    }
+    use 'neovim/nvim-lspconfig'
 
 
    -- completion
@@ -71,10 +67,13 @@ return require('packer').startup(function()
 
     use 'lervag/vimtex'
 
+    use 'preservim/vimux'
+
     -- use 'glepnir/dashboard-nvim'
    -- themes
     -- use 'arcticicestudio/nord-vim'
     -- use 'bluz71/vim-nightfly-guicolors'
     -- use 'folke/tokyonight.nvim'
     -- use "rafamadriz/friendly-snippets"
+
 end)

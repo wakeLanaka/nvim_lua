@@ -45,17 +45,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 -- -- LSP SERVER CONFIG
 -- -- nvim-cmp supports additional completion capabilities
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- -- Enable the following language servers
--- local servers = {'pyright', 'tsserver', "csharp_ls", "texlab" }
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     flags = {
---       debounce_text_changes = 150,
---     },
---     capabilities = capabilities,
---   }
--- end
+local servers = {'pyright', 'tsserver', "csharp_ls", "texlab" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    },
+    capabilities = capabilities,
+  }
+end
