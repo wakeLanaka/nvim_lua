@@ -73,6 +73,8 @@ map('n', '<m-8>', '8gt', {noremap = true})
 map('n', '<m-9>', '9gt', {noremap = true})
 map('n', '<c-t>', ':tabnew<cr>', {noremap = true})
 
+map('n', '<c-b>', '<cmd>Telescope buffers<cr>', {noremap = true})
+
 -- open explorer
 -- map('n', '<c-e>', '<cmd>Lexplore<cr>', {noremap = true})
 map('n', '<c-e>', '<cmd>NvimTreeToggle<cr>', {noremap = true})

@@ -39,7 +39,7 @@
   "textcolorRED" : {
     "prefix": ["tcr"],
     "body": [
-      "\\textcolor{red}{$0}"
+      "\\textcolor{red}$0"
     ]
   }
 }

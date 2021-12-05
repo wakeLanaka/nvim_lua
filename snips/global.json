@@ -1,6 +1,6 @@
 {
-  "parameter" : {
-    "prefix": ["param"],
+  "EXAMPLE" : {
+    "prefix": ["zzzzz"],
     "body": [
       "[Parameter] public ${1:int} ${2:name} { ${3:get;}${4:set;}} ${5:= 0};"
     , "$0"]

@@ -21,9 +21,9 @@ require'which-key'.setup{
 wk.register({
   f = {
     name = "find",
-    c = {"<cmd>Telescope colorscheme<cr>","colorscheme"},
-    b = {"<cmd>Telescope buffers<cr>","buffers"},
     B = {"<cmd>Telescope marks<cr>","marks"},
+    c = {"<cmd>Telescope colorscheme<cr>","colorscheme"},
+    g = {"<cmd>Telescope live_grep<cr>", "grep"},
     o = {"<cmd>Telescope oldfiles<cr>", "old files"},
     t = {"<cmd>Telescope tags<cr>", "tags"},
     w = {"<cmd>Telescope grep_string<cr>", "word under cursor"},
@@ -41,13 +41,9 @@ wk.register({
     b = {"<cmd>Git blame<cr>", "blame"},
     c = {"<cmd>Git commit<cr>", "commit"},
     d = {"<cmd>Git diff<cr>", "diff"},
-    h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
     g = {"<cmd>Git<cr>", "summary"},
+    h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
   }
-},{prefix = "<leader>"})
-
-wk.register({
-  h = {"<cmd>Dashboard<cr>","home"},
 },{prefix = "<leader>"})
 
 wk.register({
@@ -61,8 +57,8 @@ wk.register({
       h = {"left"},
       l = {"right"},
     },
-    r = {"rename"},
     R = {"<cmd>Telescope lsp_references<cr>","references"},
+    r = {"rename"},
     s = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","signature help"},
     t = {"<cmd>Telescope lsp_type_definitions<cr>", "type definition"},
     w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "workspace diagnostics"},
@@ -83,5 +79,6 @@ wk.register({
     c = {"<cmd>VimuxCloseRunner<cr>","close"},
     l = {"<cmd>VimuxRunLastCommand<cr>","last"},
     p = {"<cmd>VimuxPromptCommand<cr>","prompt"},
+    t = {"<cmd>VimtexCompile<cr>", "tex"},
   }
 },{prefix = "<leader>"})
