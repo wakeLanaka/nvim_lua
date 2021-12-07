@@ -4,8 +4,8 @@ local exec = vim.api.nvim_exec 	-- execute Vimscript
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.o.mouse = 'a' -- allows working with mouse
 
-vim.opt.switchbuf = 'usetab'
 vim.wo.number = true -- display line numbers
+-- vim.wo.relativenumber = true
 vim.opt.numberwidth = 5 -- amount of columns for numbers
 vim.opt.foldcolumn = '1' -- reserve 1 column for folds
 vim.opt.showtabline = 0 -- never display tabs
@@ -23,6 +23,7 @@ vim.o.hidden = true -- enable background buffers
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
 -- SEARCH
 vim.o.ignorecase = true -- ignore case letters when search
 vim.o.smartcase = true -- ignore lowercase for the whole pattern

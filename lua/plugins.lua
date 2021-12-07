@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -23,15 +21,12 @@ return require('packer').startup(function()
 
     -- tpope
     use 'tpope/vim-commentary'-- easy commentary
-    use 'tpope/vim-dispatch'-- build and test dispatch
     use 'tpope/vim-surround'-- easy surrounding
     use 'tpope/vim-repeat'-- allows to repeat plugin mapppings with '.'
-    use 'tpope/vim-vinegar'-- netrw addons
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-abolish'
 
     -- git
-    use 'tpope/vim-fugitive' -- Git commands in nvim
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
 
@@ -44,12 +39,9 @@ return require('packer').startup(function()
 
    -- Highlighting
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    use 'nvim-treesitter/nvim-treesitter-refactor'
 
    -- lsp server
     use 'neovim/nvim-lspconfig'
-
 
    -- completion
     use 'hrsh7th/nvim-cmp'

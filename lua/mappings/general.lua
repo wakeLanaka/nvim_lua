@@ -12,8 +12,6 @@ vim.g.maplocalleader = ' '
 -- Standard like this. Somehow tpope plugins do change this!
 -- map('n', 'y', '"0y', {noremap = true})
 
-map('n', '<leader>e', ':e $MYVIMRC<cr>', {noremap = true})
-
 map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true})
 map('n', '<leader>-', ':source $MYVIMRC<cr>', {noremap = true})
 
@@ -116,6 +114,11 @@ map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
 -- map('i', '<c-k>', '<nop>', {noremap = true})
+
+-- QUICKFIX
+map ('n', '<m-c>', '<cmd>copen<cr>', {noremap = true})
+map ('n', '<m-n>', '<cmd>cnext<cr>', {noremap = true})
+map ('n', '<m-p>', '<cmd>cprevious<cr>', {noremap = true})
 
 -- TODO does not work
 -- trick to trigger wildmenu with <c-space>

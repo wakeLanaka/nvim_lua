@@ -1,8 +1,8 @@
 require('general')
 
-require('mappings')
+require('mappings/init')
 
 require('plugins')
-require('plug_config')
+require('plug_config/init')
 
-require('themes')
+require('themes/init')

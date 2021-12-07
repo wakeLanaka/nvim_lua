@@ -19,7 +19,3 @@ require('plug_config/autopairs')
 require('plug_config/lualine')
 
 require('plug_config/nvim_tree')
-
--- require('plug_config/netrw')
--- require('plug_config/dashboard')
--- require('plug_config/startify')

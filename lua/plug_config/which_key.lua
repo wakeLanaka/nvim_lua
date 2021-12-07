@@ -19,6 +19,10 @@ require'which-key'.setup{
 }
 
 wk.register({
+  i = {"init treesitter"},
+},{prefix = "<leader>"})
+
+wk.register({
   f = {
     name = "find",
     B = {"<cmd>Telescope marks<cr>","marks"},
@@ -30,21 +34,17 @@ wk.register({
   }
 },{prefix = "<leader>"})
 
-wk.register({
-  i = {"init treesitter"},
-},{prefix = "<leader>"})
-
-wk.register({
-  g = {
-    name = "git",
-    a = {"<cmd>Git add .<cr>","add file"},
-    b = {"<cmd>Git blame<cr>", "blame"},
-    c = {"<cmd>Git commit<cr>", "commit"},
-    d = {"<cmd>Git diff<cr>", "diff"},
-    g = {"<cmd>Git<cr>", "summary"},
-    h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
-  }
-},{prefix = "<leader>"})
+-- wk.register({
+--   g = {
+--     name = "git",
+--     a = {"<cmd>Git add .<cr>","add file"},
+--     b = {"<cmd>Git blame<cr>", "blame"},
+--     c = {"<cmd>Git commit<cr>", "commit"},
+--     d = {"<cmd>Git diff<cr>", "diff"},
+--     g = {"<cmd>Git<cr>", "summary"},
+--     h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
+--   }
+-- },{prefix = "<leader>"})
 
 wk.register({
   l = {
@@ -62,14 +62,6 @@ wk.register({
     s = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","signature help"},
     t = {"<cmd>Telescope lsp_type_definitions<cr>", "type definition"},
     w = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "workspace diagnostics"},
-  }
-},{prefix = "<leader>"})
-
-wk.register({
-  s = {
-    name = "session",
-    l = {"<cmd>SessionLoad<cr>","load"},
-    s = {"<cmd>SessionSave<cr>","save"},
   }
 },{prefix = "<leader>"})
 
