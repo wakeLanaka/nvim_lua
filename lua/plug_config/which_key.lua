@@ -34,6 +34,10 @@ wk.register({
   }
 },{prefix = "<leader>"})
 
+wk.register({
+  n = {"<cmd>e ~/switchdrive/Private/Notes/notes.tex<cr>", "notes"}
+},{prefix = "<leader>"})
+
 -- wk.register({
 --   g = {
 --     name = "git",

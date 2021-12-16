@@ -376,11 +376,11 @@ theme.plugins = {
 	NvimTreeFileStaged = { fg = p.iris },
 
 	NvimTreeEmptyFolderName = { fg = p.inactive },
-	NvimTreeFolderIcon = { fg = p.subtle },
-	NvimTreeFolderName = { fg = p.foam },
+	NvimTreeFolderIcon = { fg = p.pine },
+	NvimTreeFolderName = { fg = p.pine },
 	NvimTreeImageFile = { fg = p.text },
 	NvimTreeOpenedFile = { fg = p.text, bg = p.highlight },
-	NvimTreeOpenedFolderName = { fg = p.foam },
+	NvimTreeOpenedFolderName = { fg = p.pine },
 	NvimTreeRootFolder = { fg = p.iris },
 	NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
 

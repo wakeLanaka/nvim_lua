@@ -43,23 +43,67 @@ elseif
 	or vim.g.rose_pine_variant == 'rose-pine-moon'
 then
 	palette = {
-		base = '#24283b',
+		base = '#282A36',
 		surface = base,
 		overlay = '#393552',
 		inactive = '#44475A',
 		subtle = '#817c9c',
 		text = '#e0def4',
 		love = '#eb6f92',
-		gold = '#f6c177',
-		rose = '#ea9a97',
-		pine = '#3e8fb0',
-		foam = '#9ccfd8',
-		iris = '#c4a7e7',
+		gold = '#FFBF69',
+		rose = '#FEA7A2',
+		pine = '#027592',
+		foam = '#8ED1DA',
+		iris = '#CAA4EC',
 		highlight = '#312f44',
 		highlight_inactive = '#44475A',
 		highlight_overlay = '#44475A',
     search_overlay = '#B0DAD8',
     visual_overlay = '#D5C0EE'
+	}
+elseif
+	vim.g.rose_pine_variant == 'chalk'
+then
+	palette = {
+		base = '#282A36',
+		surface = base,
+		overlay = '#393552',
+		inactive = '#44475A',
+		subtle = '#817c9c',
+		text = '#e0def4',
+		love = '#f58e8e', --red
+		rose = '#a9d3ab', --green
+		gold = '#fed37e', --yellow
+		pine = '#027592', --blue
+		iris = '#CAA4EC', --magenta
+		foam = '#8ED1DA', --cyan
+		highlight = '#312f44',
+		highlight_inactive = '#44475A',
+		highlight_overlay = '#44475A',
+    search_overlay = '#B0DAD8',
+    visual_overlay = '#D5C0EE'
+	}
+elseif
+	vim.g.rose_pine_variant == 'hybrid'
+then
+	palette = {
+		base = '#282A36',
+		surface = base,
+		overlay = '#393552',
+		inactive = '#44475A',
+		subtle = '#817c9c',
+		text = '#e0def4',
+		love = '#a54242', --red
+		rose = '#ee829f', --green
+		gold = '#de935f', --yellow
+		pine = '#5f819d', --blue
+		iris = '#a480b0', --magenta
+		foam = '#5e8d87', --cyan
+		highlight = '#e1def6',
+    search_overlay = '#e1def6',
+		highlight_inactive = '#44475A',
+		highlight_overlay = '#44475A',
+    visual_overlay = '#4c9099'
 	}
 end
 
