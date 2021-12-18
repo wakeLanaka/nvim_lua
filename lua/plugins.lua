@@ -9,6 +9,7 @@ return require('packer').startup(function()
 
     -- theme
     use '~/github/nvim_lua/themes/rose-theme'
+    use '~/github/nvim_lua/themes/tokyonight.nvim'
     use {
       'nvim-lualine/lualine.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -65,7 +66,6 @@ return require('packer').startup(function()
    -- themes
     -- use 'arcticicestudio/nord-vim'
     -- use 'bluz71/vim-nightfly-guicolors'
-    -- use 'folke/tokyonight.nvim'
     -- use "rafamadriz/friendly-snippets"
 
 end)

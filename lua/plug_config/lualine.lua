@@ -1,7 +1,8 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    theme = 'rose-pine',
+    -- theme = 'rose-pine',
+    theme = 'tokyonight',
     component_separators = { left = '|', right = '|'},
     section_separators = { left = '', right = ''},
     always_divide_middle = true,

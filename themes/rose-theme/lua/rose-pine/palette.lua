@@ -93,7 +93,7 @@ then
 		inactive = '#44475A',
 		subtle = '#817c9c',
 		text = '#e0def4',
-		love = '#a54242', --red
+		love = '#e77070', --red
 		rose = '#ee829f', --green
 		gold = '#de935f', --yellow
 		pine = '#5f819d', --blue

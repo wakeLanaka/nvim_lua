@@ -40,6 +40,7 @@ map('x', '&', ':&&<cr>', {noremap = true})
 local opts = {noremap = true, silent = true}
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)

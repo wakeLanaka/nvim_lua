@@ -269,12 +269,12 @@ theme.treesitter = {
 	-- TSAnnotation = {},
 	-- TSAttribute = {},
 	TSBoolean = { fg = p.rose },
-	-- TSCharacter = {},
+	-- TSCharacter = { fg = p.rose },
 	TSComment = {
 		fg = groups.comment,
 		style = maybe_italic,
 	},
-	-- TSConditional = {},
+	-- TSConditional = {fg = p.love},
 	TSConstBuiltin = { fg = p.love },
 	-- TSConstMacro = {},
 	TSConstant = { fg = p.foam },
@@ -328,7 +328,7 @@ theme.treesitter = {
 		fg = p.text,
 		style = maybe_italic,
 	},
-	TSVariableBuiltin = { fg = p.love },
+	TSVariableBuiltin = { fg = p.foam },
 }
 
 theme.plugins = {
@@ -377,10 +377,10 @@ theme.plugins = {
 
 	NvimTreeEmptyFolderName = { fg = p.inactive },
 	NvimTreeFolderIcon = { fg = p.pine },
-	NvimTreeFolderName = { fg = p.pine },
+	NvimTreeFolderName = { fg = p.gold },
 	NvimTreeImageFile = { fg = p.text },
 	NvimTreeOpenedFile = { fg = p.text, bg = p.highlight },
-	NvimTreeOpenedFolderName = { fg = p.pine },
+	NvimTreeOpenedFolderName = { fg = p.gold },
 	NvimTreeRootFolder = { fg = p.iris },
 	NvimTreeSpecialFile = { link = 'NvimTreeNormal' },
 
