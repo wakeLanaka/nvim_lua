@@ -1,15 +1,19 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
+vim.g.nvim_tree_git_hl = 1
+vim.g.nvim_tree_respect_buf_cwd = 1 
+
+    -- \ 'git': {
+    -- \   'unstaged': "",
+    -- \   'staged': "",
+    -- \   'unmerged': "",
+    -- \   'renamed': "",
+    -- \   'untracked': "",
+    -- \   'deleted': "",
+    -- \   'ignored': ""
+    -- \   },
 vim.cmd [[
 let g:nvim_tree_icons = {
-    \ 'git': {
-    \   'unstaged': "",
-    \   'staged': "",
-    \   'unmerged': "",
-    \   'renamed': "",
-    \   'untracked': "",
-    \   'deleted': "",
-    \   'ignored': ""
-    \   },
     \ 'folder': {
     \   'arrow_open': "",
     \   'arrow_closed': "",
@@ -24,7 +28,7 @@ let g:nvim_tree_icons = {
 ]]
 
 vim.g.nvim_tree_show_icons = {
-  git = 1,
+  git = 0,
   folders = 1,
   files = 1,
   folder_arrows = 1,
@@ -62,7 +66,7 @@ require'nvim-tree'.setup {
     args = {}
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {}
   },
   git = {
