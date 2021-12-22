@@ -22,7 +22,7 @@ let g:nvim_tree_icons = {
     \   'empty': "",
     \   'empty_open': "",
     \   'symlink': "",
-    \   'symlink_open': "",
+    \   'symlink_open': "",
     \   }
     \ }
 ]]

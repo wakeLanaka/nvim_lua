@@ -25,7 +25,7 @@ function M.setup(config)
     dark5 = "#b1d0e3", -- current line number
     blue0 = "#5e8d87", -- border for telescope
     blue = "#458588", -- function names
-    cyan = "#00a4db", -- keywords (import etc) 
+    cyan = "#7e9cd8", -- keywords (import etc) 
     blue1 = "#6ab0b4", -- types
     blue2 = "#000000", -- not important
     blue5 = "#96c7ca", -- small icons

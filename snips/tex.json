@@ -1,6 +1,6 @@
 {
   "itemize" : {
-    "prefix": ["\itemi"],
+    "prefix": ["\\itemi"],
     "body": [
       "\\begin{itemize}",
       "\t\\item $0",
