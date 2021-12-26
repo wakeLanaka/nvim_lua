@@ -4,6 +4,8 @@ local exec = vim.api.nvim_exec 	-- execute Vimscript
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.o.mouse = 'a' -- allows working with mouse
 
+-- vim.o.spelllang='en,de'
+
 vim.wo.number = true -- display line numbers
 -- vim.wo.relativenumber = true
 vim.opt.numberwidth = 5 -- amount of columns for numbers
