@@ -34,4 +34,3 @@ Loads all occurences into quickfix
 
 `:g/TODO/yank A` -> copy all lines with TODO into register a. Useful to paste
 into empy file and have TODO's always around
-

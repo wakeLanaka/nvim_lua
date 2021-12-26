@@ -24,7 +24,7 @@ vim.o.hidden = true -- enable background buffers
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = 'yes' -- where to display icons on number column
 
 -- SEARCH
 vim.o.ignorecase = true -- ignore case letters when search

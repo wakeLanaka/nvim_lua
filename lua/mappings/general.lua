@@ -120,8 +120,3 @@ map('i', '<right>', '<nop>', {noremap = true})
 map ('n', '<m-c>', '<cmd>copen<cr>', {noremap = true})
 map ('n', '<m-n>', '<cmd>cnext<cr>', {noremap = true})
 map ('n', '<m-p>', '<cmd>cprevious<cr>', {noremap = true})
-
--- TODO does not work
--- trick to trigger wildmenu with <c-space>
--- vim.opt.wildcharm = vim.fn.char2nr('^Z')
--- map('c', '<c-space>', '<c-z>', {expr = true})
