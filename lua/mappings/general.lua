@@ -114,7 +114,6 @@ map('i', '<up>', '<nop>', {noremap = true})
 map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
--- map('i', '<c-k>', '<nop>', {noremap = true})
 
 -- QUICKFIX
 map ('n', '<m-c>', '<cmd>copen<cr>', {noremap = true})

@@ -8,7 +8,7 @@ vim.wo.number = true -- display line numbers
 -- vim.wo.relativenumber = true
 vim.opt.numberwidth = 5 -- amount of columns for numbers
 vim.opt.foldcolumn = '1' -- reserve 1 column for folds
-vim.opt.showtabline = 0 -- never display tabs
+vim.opt.showtabline = 1 -- never display tabs
 vim.opt.showmode = false
 
 vim.opt.textwidth = 80 -- auto new line at 80 column
