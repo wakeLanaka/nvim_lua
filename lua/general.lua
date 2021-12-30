@@ -7,6 +7,8 @@ vim.o.mouse = 'a' -- allows working with mouse
 -- vim.o.spelllang='en,de'
 vim.o.spellsuggest='best,10'
 
+vim.o.thesaurus="~/.config/nvim/thesaurus/openthesaurus.txt"
+
 vim.opt.list = true
 
 vim.wo.number = true -- display line numbers

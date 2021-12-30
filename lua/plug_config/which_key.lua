@@ -70,6 +70,15 @@ wk.register({
 },{prefix = "<leader>"})
 
 wk.register({
+  s = {
+    name = "spelling",
+    s = {"<cmd>set spell!<cr>", "start"},
+    d = {"<cmd>set spelllang=de<cr>", "deutsch"},
+    e = {"<cmd>set spelllang=en<cr>", "english"}
+  }
+},{prefix = "<leader>"})
+
+wk.register({
   t = {"<cmd>TagbarToggle<cr>", "tagbar"}
 },{prefix = "<leader>"})
 
