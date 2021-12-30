@@ -1,10 +1,10 @@
 local nvim_lsp = require 'lspconfig'
 
 -- OWN LSP ICONS
-local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-    local hl = "LspDiagnosticsSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 local border = {
@@ -49,7 +49,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- -- Enable the following language servers
-local servers = {'pyright', 'tsserver', "csharp_ls", "texlab" }
+local servers = {'pyright', 'tsserver', "csharp_ls", "texlab", "hls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

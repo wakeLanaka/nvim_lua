@@ -1,6 +1,6 @@
 {
   "itemize" : {
-    "prefix": ["\\itemi"],
+    "prefix": ["itemi"],
     "body": [
       "\\begin{itemize}",
       "\t\\item $0",
@@ -36,6 +36,13 @@
       "$0"
     ]
   },
+  "paragraph" : {
+    "prefix": ["paragraph"],
+    "body": [
+      "\\paragraph{$1}",
+      "$0"
+    ]
+  },
   "textcolorRED" : {
     "prefix": ["tcr"],
     "body": [
@@ -46,6 +53,18 @@
     "prefix": ["bf"],
     "body": [
       "\\textbf{$1} $0"
+    ]
+  },
+  "rightarrow" : {
+    "prefix": ["rightarrow"],
+    "body": [
+      "\\$\\rightarrow\\$ $0"
+    ]
+  },
+  "includegraphics" : {
+    "prefix": ["includegraphics"],
+    "body": [
+      "\\includegraphics[width=$2\\textwidth]{$1} $0"
     ]
   }
 }

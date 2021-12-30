@@ -5,6 +5,9 @@ vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.o.mouse = 'a' -- allows working with mouse
 
 -- vim.o.spelllang='en,de'
+vim.o.spellsuggest='best,10'
+
+vim.opt.list = true
 
 vim.wo.number = true -- display line numbers
 -- vim.wo.relativenumber = true

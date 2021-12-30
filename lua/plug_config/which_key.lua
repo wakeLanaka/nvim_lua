@@ -70,6 +70,10 @@ wk.register({
 },{prefix = "<leader>"})
 
 wk.register({
+  t = {"<cmd>TagbarToggle<cr>", "tagbar"}
+},{prefix = "<leader>"})
+
+wk.register({
   v = {
     name = "vimux",
     c = {"<cmd>VimuxCloseRunner<cr>","close"},

@@ -82,6 +82,9 @@ git clone git@github.com:hrsh7th/vim-vsnip.git \
 git clone git@github.com:folke/which-key.nvim.git \
 ~/.local/share/nvim/site/pack/plugins/start/which-key
 
+git clone git@github.com:preservim/tagbar.git \
+~/.local/share/nvim/site/pack/plugins/start/tagbar
+
 # theme
 git clone git@github.com:nvim-lualine/lualine.nvim.git \
 ~/.local/share/nvim/site/pack/plugins/start/lualine
