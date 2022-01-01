@@ -418,7 +418,7 @@ function M.setup(config)
     CmpItemAbbrMatchFuzzy = { fg = c.blue1, bg = c.none },
 
     CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
-    CmpItemMenu = { fg = c.comment, bg = c.none },
+    CmpItemMenu = { fg = c.cyan, bg = c.none },
       
     CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
 

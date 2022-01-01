@@ -88,15 +88,18 @@ map('v', '>', '>gv', {noremap = true})
 -- map('n', '>', '>>', {noremap = true})
 
 -- FOLDS
-map('n', 'zt', 'za', {noremap = true})
+-- map('n', 'zt', 'za', {noremap = true})
 map('n', 'zO', 'zR', {noremap = true})
 map('n', 'zC', 'zM', {noremap = true})
 
 -- RESIZING
-map('n', '<m-j>', ':resize -2<cr>', {noremap = true})
-map('n', '<m-k>', ':resize +2<cr>', {noremap = true})
-map('n', '<m-h>', ':vertical resize -2', {noremap = true})
-map('n', '<m-l>', ':vertical resize +2', {noremap = true})
+-- map('n', '<m-j>', ':resize -2<cr>', {noremap = true})
+-- map('n', '<m-k>', ':resize +2<cr>', {noremap = true})
+-- map('n', '<m-h>', ':vertical resize -2', {noremap = true})
+-- map('n', '<m-l>', ':vertical resize +2', {noremap = true})
+
+-- INSERT
+map('i', '<c-o>', '<c-o>o', {noremap = true})
 
 -- COMMAND MODE
 map('c', '<m-b>', '<s-left>', {noremap = true})
@@ -116,6 +119,6 @@ map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
 
 -- QUICKFIX
-map ('n', '<m-c>', '<cmd>copen<cr>', {noremap = true})
-map ('n', '<m-n>', '<cmd>cnext<cr>', {noremap = true})
-map ('n', '<m-p>', '<cmd>cprevious<cr>', {noremap = true})
+map ('n', '<m-c>', '<cmd>lopen<cr>', {noremap = true})
+map ('n', '<m-n>', '<cmd>lnext<cr>', {noremap = true})
+map ('n', '<m-p>', '<cmd>lprevious<cr>', {noremap = true})

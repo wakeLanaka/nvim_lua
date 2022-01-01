@@ -13,7 +13,7 @@ local kind_icons = {
   Value = "Val",--"",
   Enum = "Enum",--"",
   Keyword = "",
-  Snippet = " ",
+  Snippet = "Snip",
   Color = "",
   File = " ",
   Reference = "Ref",--" ",
@@ -28,7 +28,6 @@ local kind_icons = {
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
-local lspkind = require('lspkind')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
@@ -46,8 +45,8 @@ cmp.setup {
     ['<C-n>'] = cmp.mapping(function()
       cmp.select_next_item({behavior = cmp.SelectBehavior.Select })
     end, {'i', 's', 'c'}),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(-4),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
@@ -96,7 +95,6 @@ cmp.setup {
     border = { "╭","─","╮","│","╯","─","╰","│" },
   },
   formatting = {
-    kind_icons = kind_icons,
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({

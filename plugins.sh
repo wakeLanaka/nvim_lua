@@ -30,9 +30,6 @@ git clone git@github.com:lewis6991/gitsigns.nvim.git \
 ~/.local/share/nvim/site/pack/git/start/gitsigns
 
 # lsp
-git clone git@github.com:onsails/lspkind-nvim.git \
-~/.local/share/nvim/site/pack/lsp/start/lspkind
-
 git clone git@github.com:neovim/nvim-lspconfig.git \
 ~/.local/share/nvim/site/pack/lsp/start/lspconfig
 
@@ -54,6 +51,8 @@ git clone git@github.com:nvim-lua/plenary.nvim.git \
 
 git clone git@github.com:nvim-telescope/telescope-fzf-native.nvim.git \
 ~/.local/share/nvim/site/pack/plugins/start/telescope-fzf-native
+
+(cd ~/.local/share/nvim/site/pack/plugins/start/telescope-fzf-native/ && make)
 
 git clone git@github.com:nvim-telescope/telescope.nvim.git \
 ~/.local/share/nvim/site/pack/plugins/start/telescope
