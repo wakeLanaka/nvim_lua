@@ -1,4 +1,16 @@
 {
+  "textit" : {
+    "prefix": ["it"],
+    "body": [
+      "\\textit{$1} $0"
+    ]
+  },
+  "input" : {
+    "prefix": ["input"],
+    "body": [
+      "\\input{$0}"
+    ]
+  },
   "itemize" : {
     "prefix": ["itemi"],
     "body": [

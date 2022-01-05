@@ -47,8 +47,8 @@ map('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
 map('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
 
 -- allows to move through display lines
--- map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
--- map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 map('n', '^', 'g^', {noremap = true})
 map('n', '0', 'g0', {noremap = true})
 map('n', '$', 'g$', {noremap = true})
