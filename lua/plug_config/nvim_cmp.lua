@@ -63,7 +63,7 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, }
-      elseif vim.fn["vsnip#available"]() == 1 then
+      elseif vim.fn["vsnip#available"](1) == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
       else
         fallback()

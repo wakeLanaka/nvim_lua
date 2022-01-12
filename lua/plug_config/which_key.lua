@@ -54,14 +54,17 @@ wk.register({
   l = {
     name = "lsp",
     a = {"<cmd>lua vim.lsp.buf.code_action()<cr>","code actions"},
+    A = {"<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "add workspace folder"},
     d = {"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>","line diagnostics"},
+    D = {"<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>","delete workspace folder"},
     f = {"<cmd>lua vim.lsp.buf.formatting()<CR>","format file"},
     q = {"<cmd>lua vim.diagnostic.setloclist()<CR>","signature help"},
     R = {"<cmd>Telescope lsp_references<cr>","references"},
     r = {"<cmd>lua vim.lsp.buf.rename()<CR>","rename"},
     s = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","signature help"},
     t = {"<cmd>lua vim.lsp.buf.type_definition()<CR>", "type definition"},
-    w = {"<cmd>Telescope diagnostics<cr>", "workspace diagnostics"},
+    w = {"<cmd>TroubleToggle<cr>", "workspace diagnostics"},
+    l = {"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "list workspace folders"},
   }
 },{prefix = "<leader>"})
 

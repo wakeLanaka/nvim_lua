@@ -76,7 +76,7 @@
   "includegraphics" : {
     "prefix": ["includegraphics"],
     "body": [
-      "\\includegraphics[width=$2\\textwidth]{$1} $0"
+      "\\includegraphics[width=(0.${1:24}\\textwidth)]{$2}$0"
     ]
   }
 }
