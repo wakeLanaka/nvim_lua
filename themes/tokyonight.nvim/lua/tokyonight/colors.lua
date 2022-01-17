@@ -27,7 +27,6 @@ function M.setup(config)
     blue = "#458588", -- function names
     cyan = "#7e9cd8", -- keywords (import etc) 
     blue1 = "#6ab0b4", -- types
-    blue2 = "#000000", -- not important
     blue5 = "#96c7ca", -- small icons
     blue6 = "#000000", -- for regexes
     blue7 = "#000000", -- not important
@@ -84,7 +83,7 @@ function M.setup(config)
 
   colors.error = colors.red1
   colors.warning = colors.yellow
-  colors.info = colors.blue2
+  colors.info = colors.yellow
   colors.hint = colors.teal
 
   util.color_overrides(colors, config)

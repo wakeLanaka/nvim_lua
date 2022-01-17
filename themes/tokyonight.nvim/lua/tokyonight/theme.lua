@@ -402,8 +402,8 @@ function M.setup(config)
 
     -- Hop
     HopNextKey = { fg = c.magenta2, style = "bold" },
-    HopNextKey1 = { fg = c.blue2, style = "bold" },
-    HopNextKey2 = { fg = util.darken(c.blue2, 0.3) },
+    HopNextKey1 = { fg = c.yellow, style = "bold" },
+    HopNextKey2 = { fg = util.darken(c.yellow, 0.3) },
     HopUnmatched = { fg = c.dark3 },
 
     LightspeedGreyWash = { fg = c.dark3 },
