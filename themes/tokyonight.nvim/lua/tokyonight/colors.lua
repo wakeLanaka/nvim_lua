@@ -28,7 +28,7 @@ function M.setup(config)
     cyan = "#7e9cd8", -- keywords (import etc) 
     blue1 = "#6ab0b4", -- types
     blue5 = "#96c7ca", -- small icons
-    blue6 = "#000000", -- for regexes
+    blue6 = "#47ced6", -- for regexes
     blue7 = "#000000", -- not important
     magenta = "#ef7a85", -- keywords (Classes, Promise etc.) 
     magenta2 = "#000000", -- not important
