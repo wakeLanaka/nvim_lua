@@ -1,5 +1,3 @@
-local exec = vim.api.nvim_exec 	-- execute Vimscript
-
 -- GENERAL
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 vim.o.mouse = 'a' -- allows working with mouse
@@ -57,10 +55,9 @@ vim.opt.viewdir = '$HOME/.config/nvim/views'
 
 vim.opt.swapfile = false -- do not generate any swafiles
 
-
 -- FUNCTIONS
 -- auto-save fold views
-exec( [[
+vim.api.nvim_exec( [[
 augroup remember_folds
     autocmd!
     autocmd BufWinLeave ?* silent! mkview
@@ -69,15 +66,12 @@ augroup end
 ]], false)
 
 -- Highlight on yank
-vim.api.nvim_exec(
-  [[
+vim.api.nvim_exec( [[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]],
-  false
-)
+]], false)
 
 -- don't auto commenting new lines
 vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
@@ -85,7 +79,7 @@ vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 -- When editing a file, always jump to the last known cursor position.
 -- Don't do it for commit messages, when the position is invalid, or when
 -- inside an event handler (happens when dropping a file on gvim).
-exec([[
+vim.api.nvim_exec( [[
 autocmd BufReadPost *
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |

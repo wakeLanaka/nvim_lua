@@ -19,7 +19,7 @@ function M.setup(config)
     terminal_black = "#1f2335", -- ????
     fg = "#d8dee9", -- normal fg
     fg_dark = "#d8dee9", -- lualine file name
-    fg_gutter = "#44475A", -- NOT current line number
+    fg_gutter = "#5e6176", -- NOT current line number
     dark3 = "#1f2335", -- ????
     comment = "#565f89", -- commentary
     dark5 = "#b1d0e3", -- current line number
