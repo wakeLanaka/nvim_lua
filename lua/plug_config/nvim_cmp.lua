@@ -39,7 +39,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ['<C-p>'] = cmp.mapping(function() 
+    ['<C-x><C-s>'] = cmp.mapping.complete({config = {sources = {{name = 'vsnip'}}}}),
+    ['<C-p>'] = cmp.mapping(function()
       cmp.select_prev_item({behavior = cmp.SelectBehavior.Select })
     end, {'i', 's', 'c'}),
     ['<C-n>'] = cmp.mapping(function()
@@ -83,16 +84,16 @@ cmp.setup {
     { name = 'treesitter' },
     { name = 'path' },{
       name = 'buffer',
-      options = {
-        get_bufnrs = function()
-          return vim.api.nvim_list_bufs()
-        end,
+      option = {
+        get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
       },
     },
     -- { name = 'spell' },
   },
-  documentation = {
-    border = { "╭","─","╮","│","╯","─","╰","│" },
+  window = {
+    documentation = {
+      border = { "╭","─","╮","│","╯","─","╰","│" },
+    },
   },
   formatting = {
     format = function(entry, vim_item)

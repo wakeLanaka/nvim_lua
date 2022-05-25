@@ -1,7 +1,7 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_respect_buf_cwd = 1 
+vim.g.nvim_tree_respect_buf_cwd = 1
 
     -- \ 'git': {
     -- \   'unstaged': "",
@@ -39,7 +39,6 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -73,7 +72,7 @@ require'nvim-tree'.setup {
     enable = true,
     ignore = true,
     timeout = 500,
-  },  
+  },
   view = {
     width = 30,
     height = 30,
@@ -83,9 +82,10 @@ require'nvim-tree'.setup {
     mappings = {
       custom_only = false,
       list = {
-  { key = {"<CR>", "o", "<2-LeftMouse>", "l"}, cb = tree_cb("edit") },
-  { key = "h",                         cb = tree_cb("close_node") },
-  { key = "y",                            cb = tree_cb("copy") },
+        { key = {"<CR>", "o", "<2-LeftMouse>", "l"}, action = "edit" },
+        { key = "h", action = "close_node" },
+        { key = "y", action = "copy" },
+        { key = "<C-e>", action = "" },
       }
     }
   }

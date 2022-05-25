@@ -16,9 +16,9 @@ vim.opt.foldcolumn = '1' -- reserve 1 column for folds
 vim.opt.showtabline = 1 -- never display tabs
 vim.opt.showmode = false
 
-vim.opt.textwidth = 80 -- auto new line at 80 column
+vim.opt.textwidth = 120 -- auto new line at 80 column
 -- vim.opt.formatoptions:append('t')
-vim.opt.colorcolumn = '80' -- display 80th column
+vim.opt.colorcolumn = '120' -- display 80th column
 vim.opt.cursorline = true -- display current row of cursor
 
 vim.opt.splitright = true -- vertical split to the right
