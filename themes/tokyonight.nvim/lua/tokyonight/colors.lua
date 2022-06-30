@@ -16,6 +16,7 @@ function M.setup(config)
     bg_dark = "#282a36", -- background lua line
     bg = "#282a36", -- actual background
     bg_highlight = "#44475A", -- current line highlight
+    bg_sidebar = "#2e3440", -- current line highlight
     terminal_black = "#1f2335", -- ????
     fg = "#d8dee9", -- normal fg
     fg_dark = "#d8dee9", -- lualine file name
@@ -74,7 +75,7 @@ function M.setup(config)
   colors.bg_statusline = colors.bg_dark
 
   -- Sidebar and Floats are configurable
-  colors.bg_sidebar = (config.transparentSidebar and colors.none) or config.darkSidebar and colors.bg_dark or colors.bg
+  -- colors.bg_sidebar = (config.transparentSidebar and colors.none) or config.darkSidebar and colors.bg_dark or colors.bg
   colors.bg_float = config.darkFloat and colors.bg_dark or colors.bg
 
   colors.bg_visual = util.darken(colors.blue0, 0.7)

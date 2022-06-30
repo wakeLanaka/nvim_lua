@@ -1,10 +1,20 @@
 local map = vim.api.nvim_set_keymap
-
-map('n', '<c-p>', '<cmd>Telescope find_files<cr>', { noremap = true, silent = true })
-map('n', '<c-f>', '<cmd>Telescope live_grep<cr>', { noremap = true, silent = true })
+local actions = require "telescope.actions"
 
 require('telescope').setup {
+  defaults = {
+    mappings = {
+      i = {
+        ["<Esc>"] = actions.close,
+        -- ["<C-u>"] = { "<c-u>", type = "command" },
+      }
+    }
+  },
   extensions = {
+    aerial = {
+      -- Display symbols as <root>.<parent>.<symbol>
+      show_nesting = true
+    },
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
@@ -13,4 +23,5 @@ require('telescope').setup {
     }
   }
 }
+require('telescope').load_extension('aerial')
 require('telescope').load_extension('fzf')

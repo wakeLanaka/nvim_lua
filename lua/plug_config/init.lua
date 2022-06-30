@@ -10,8 +10,6 @@ require('plug_config/lsp')
 
 require('plug_config/which_key')
 
-require('plug_config/vsnip')
-
 require('plug_config/vimtex')
 
 require('plug_config/autopairs')
@@ -21,3 +19,9 @@ require('plug_config/lualine')
 require('plug_config/nvim_tree')
 
 require('plug_config/trouble')
+
+require('plug_config/aerial')
+
+require('plug_config/comment')
+
+require('plug_config/grammar_guard')

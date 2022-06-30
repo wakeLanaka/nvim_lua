@@ -1,4 +1,4 @@
-local wk = require'which-key'
+local wk = require("which-key")
 
 require'which-key'.setup{
   plugins = {
@@ -11,23 +11,22 @@ require'which-key'.setup{
       motions = false,
       text_objects = false,
     }
-  }, triggers_blacklist = {
+  },
+  triggers_blacklist = {
     i = {"j", "k"},
     v = {"j", "k"},
     n = {"d", "c"},
+  },
+  window = {
+    border = "none"
   }
 }
 
 wk.register({
-  i = {"init treesitter"},
-},{prefix = "<leader>"})
-
-wk.register({
   f = {
     name = "find",
-    B = {"<cmd>Telescope marks<cr>","marks"},
     c = {"<cmd>Telescope colorscheme<cr>","colorscheme"},
-    g = {"<cmd>Telescope live_grep<cr>", "grep"},
+    m = {"<cmd>Telescope marks<cr>","marks"},
     o = {"<cmd>Telescope oldfiles<cr>", "old files"},
     t = {"<cmd>Telescope tags<cr>", "tags"},
     w = {"<cmd>Telescope grep_string<cr>", "word under cursor"},
@@ -35,36 +34,30 @@ wk.register({
 },{prefix = "<leader>"})
 
 wk.register({
-  n = {"<cmd>e ~/switchdrive/Private/Notes/notes.tex<cr>", "notes"}
+  g = {
+    name = "git",
+    b = {"<cmd> lua require('telescope.builtin').git_branches{}<cr>", "branches"},
+    B = {"<cmd>Gitsigns toggle_current_line_blame<cr>", "blame"},
+    c = {"<cmd> lua require('telescope.builtin').git_commits{}<cr>", "commits"},
+    s = {"<cmd> lua require('telescope.builtin').git_stash{}<cr>", "stash"},
+  }
 },{prefix = "<leader>"})
-
--- wk.register({
---   g = {
---     name = "git",
---     a = {"<cmd>Git add .<cr>","add file"},
---     b = {"<cmd>Git blame<cr>", "blame"},
---     c = {"<cmd>Git commit<cr>", "commit"},
---     d = {"<cmd>Git diff<cr>", "diff"},
---     g = {"<cmd>Git<cr>", "summary"},
---     h = {"<cmd>Gitsigns preview_hunk<cr>", "diff"},
---   }
--- },{prefix = "<leader>"})
 
 wk.register({
   l = {
     name = "lsp",
-    a = {"<cmd>lua vim.lsp.buf.code_action()<cr>","code actions"},
-    A = {"<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "add workspace folder"},
-    d = {"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>","line diagnostics"},
-    D = {"<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>","delete workspace folder"},
-    f = {"<cmd>lua vim.lsp.buf.formatting()<CR>","format file"},
-    q = {"<cmd>lua vim.diagnostic.setloclist()<CR>","signature help"},
+    a = {"code actions"},
+    A = {"add workspace folder"},
+    d = {"line diagnostics"},
+    D = {"delete workspace folder"},
+    f = {"format file"},
+    q = {"diagnostic loc"},
     R = {"<cmd>Telescope lsp_references<cr>","references"},
-    r = {"<cmd>lua vim.lsp.buf.rename()<CR>","rename"},
-    s = {"<cmd>lua vim.lsp.buf.signature_help()<cr>","signature help"},
-    t = {"<cmd>lua vim.lsp.buf.type_definition()<CR>", "type definition"},
+    r = {"rename"},
+    s = {"signature help"},
+    t = { "type definition"},
     w = {"<cmd>TroubleToggle<cr>", "workspace diagnostics"},
-    l = {"<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "list workspace folders"},
+    l = {"list workspace folders"},
   }
 },{prefix = "<leader>"})
 
@@ -78,15 +71,15 @@ wk.register({
 },{prefix = "<leader>"})
 
 wk.register({
-  t = {"<cmd>TagbarToggle<cr>", "tagbar"}
+  a = {"<cmd>AerialToggle!<cr>", "aerial"}
 },{prefix = "<leader>"})
 
 wk.register({
   v = {
     name = "vimux",
-    c = {"<cmd>VimuxCloseRunner<cr>","close"},
+    c = {"<cmd>VimtexCompile<cr>", "compile tex"},
     l = {"<cmd>VimuxRunLastCommand<cr>","last"},
     p = {"<cmd>VimuxPromptCommand<cr>","prompt"},
-    t = {"<cmd>VimtexCompile<cr>", "tex"},
+    t = {"<cmd>VimtexTocToggle<cr>", "toc tex"},
   }
 },{prefix = "<leader>"})

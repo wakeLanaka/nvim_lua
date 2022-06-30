@@ -1,11 +1,11 @@
 local kind_icons = {
   Text = "Txt", --"",
-  Method = "Func", --"",
-  Function = "Func",--"",
+  Method = "", --"",
+  Function = "",--"",
   Constructor = "華",
   Field = "Field",--"",
   Variable = "Var",--"",
-  Class = "Class",--"ﴯ",
+  Class = "",--"ﴯ",
   Interface = "Int",--"",
   Module = "Module",--"Mo",
   Property = "Prop",--"ﰠ",
@@ -27,19 +27,20 @@ local kind_icons = {
 }
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local luasnip = require('luasnip')
 
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 
 cmp.setup {
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = {
-    ['<C-x><C-s>'] = cmp.mapping.complete({config = {sources = {{name = 'vsnip'}}}}),
+    ['<C-x><C-s>'] = cmp.mapping.complete({config = {sources = {{name = 'luasnip'}}}}),
     ['<C-p>'] = cmp.mapping(function()
       cmp.select_prev_item({behavior = cmp.SelectBehavior.Select })
     end, {'i', 's', 'c'}),
@@ -57,22 +58,18 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    -- ['<CR>'] = cmp.mapping.confirm { 
-    --   behavior = cmp.ConfirmBehavior.Replace,
-    --   select = false,
-    -- },
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, }
-      elseif vim.fn["vsnip#available"](1) == 1 then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-expand-or-jump)", true, true, true), "")
+        cmp.confirm { behavior = cmp.ConfirmBehavior.Insert, select = false, }
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
     end, {'i', 's', 'c'}),
     ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if vim.fn["vsnip#jumpable"](-1) then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>(vsnip-jump-prev)", true, true, true), "")
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
       else
         fallback()
       end
@@ -80,15 +77,11 @@ cmp.setup {
   },
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
+    { name = 'luasnip' },
     { name = 'treesitter' },
-    { name = 'path' },{
-      name = 'buffer',
-      option = {
-        get_bufnrs = function() return { vim.api.nvim_get_current_buf() } end
-      },
-    },
-    -- { name = 'spell' },
+    { name = 'path' },
+    { name = 'nvim_lua'},
+    { name = 'buffer'},
   },
   window = {
     documentation = {
@@ -100,12 +93,12 @@ cmp.setup {
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
         nvim_lsp = " ",
-        nvim_lua = " ",
+        nvim_lua = " ",
         treesitter = " ",
         path = " ",
         buffer = "﬘ ",
         bash = " ",
-        vsnip = " ",
+        luasnip = " ",
       })[entry.source.name]
       return vim_item
     end,
@@ -115,18 +108,15 @@ cmp.setup {
   }
 }
 
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
     sources = {
       { name = 'buffer' }
     }
   })
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
+      {name = 'path'},
       { name = 'cmdline' },
       { name = 'buffer' }
     })

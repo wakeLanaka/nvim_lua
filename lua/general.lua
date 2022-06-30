@@ -10,15 +10,15 @@ vim.o.thesaurus="~/.config/nvim/thesaurus/openthesaurus.txt"
 vim.opt.list = true
 
 vim.wo.number = true -- display line numbers
+vim.wo.relativenumber = true -- display relativenumbers to current line
 -- vim.wo.relativenumber = true
-vim.opt.numberwidth = 5 -- amount of columns for numbers
-vim.opt.foldcolumn = '1' -- reserve 1 column for folds
-vim.opt.showtabline = 1 -- never display tabs
+vim.opt.numberwidth = 4 -- amount of columns for numbers
+-- vim.opt.foldcolumn = '1' -- reserve 1 column for folds
+vim.opt.showtabline = 1 -- display tabs only when multiple tabs
 vim.opt.showmode = false
 
-vim.opt.textwidth = 120 -- auto new line at 80 column
--- vim.opt.formatoptions:append('t')
-vim.opt.colorcolumn = '120' -- display 80th column
+vim.opt.textwidth = 120 -- auto new line at 120 column
+vim.opt.colorcolumn = '120' -- display 120th column
 vim.opt.cursorline = true -- display current row of cursor
 
 vim.opt.splitright = true -- vertical split to the right
@@ -33,14 +33,14 @@ vim.wo.signcolumn = 'yes' -- where to display icons on number column
 
 -- SEARCH
 vim.o.ignorecase = true -- ignore case letters when search
-vim.o.smartcase = true -- ignore lowercase for the whole pattern
+vim.o.smartcase = true
 
 -- INDENT
 vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.shiftwidth = 2 -- shift 2 spaces when tab
 vim.opt.tabstop = 2 -- 1 tab == 2 spaces
 vim.opt.softtabstop = 0
--- vim.opt.smartindent = true -- autoindent new lines
+vim.opt.smartindent = true -- autoindent new lines
 vim.opt.shiftround = true -- rounds indent to multiple of shiftwidth
 vim.o.breakindent = true -- wrapped text will also get indented
 

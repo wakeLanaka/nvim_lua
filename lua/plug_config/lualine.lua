@@ -1,26 +1,24 @@
 require'lualine'.setup {
   options = {
     icons_enabled = true,
-    -- theme = 'rose-pine',
-    theme = 'tokyonight',
-    component_separators = { left = '|', right = '|'},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = ' ', right = ' '},
+    section_separators = { left = ' ', right = ' '},
     always_divide_middle = true,
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
     lualine_c = {'filename'},
-    lualine_x = {'filetype'},
-    lualine_y = {
+    lualine_x = {'aerial',
       {
-        'diagnostics', 
+        'diagnostics',
         sources={'nvim_diagnostic'},
-        symbols = {error = ' ', warn = ' ', info = '', hint = ' '},
-        always_visible = false
+        symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+        always_visible = true
       }
     },
-    lualine_z = {'location'},
+    lualine_y = {'filetype'},
+    lualine_z = {},
   },
   tabline = {},
   extensions = {}
