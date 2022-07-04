@@ -7,7 +7,7 @@ require('packer').startup(function(use)
 
   use 'L3MON4D3/LuaSnip'
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter'}
 
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'

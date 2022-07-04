@@ -1,29 +1,5 @@
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_respect_buf_cwd = 1
-
-vim.cmd [[
-let g:nvim_tree_icons = {
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   }
-    \ }
-]]
-
-vim.g.nvim_tree_show_icons = {
-  git = 0,
-  folders = 1,
-  files = 1,
-  folder_arrows = 1,
-}
-
 require'nvim-tree'.setup {
+  respect_buf_cwd = true,
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -31,10 +7,6 @@ require'nvim-tree'.setup {
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
   diagnostics = {
     enable = true,
     icons = {
@@ -67,7 +39,6 @@ require'nvim-tree'.setup {
     height = 30,
     hide_root_folder = false,
     side = 'left',
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {
@@ -75,6 +46,29 @@ require'nvim-tree'.setup {
         { key = "h", action = "close_node" },
         { key = "y", action = "copy" },
         { key = "<C-e>", action = "" },
+      }
+    }
+  },
+  renderer = {
+    highlight_git = true,
+    icons = {
+      show = {
+        git = false,
+        folder = true,
+        file = true,
+        folder_arrow = true,
+      },
+      glyphs = {
+        folder= {
+          arrow_open= "",
+          arrow_closed= "",
+          default= "",
+          open= "",
+          empty= "",
+          empty_open= "",
+          symlink= "",
+          symlink_open= "",
+        }
       }
     }
   }
