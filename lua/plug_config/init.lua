@@ -23,5 +23,3 @@ require('plug_config/trouble')
 require('plug_config/aerial')
 
 require('plug_config/comment')
-
-require('plug_config/grammar_guard')

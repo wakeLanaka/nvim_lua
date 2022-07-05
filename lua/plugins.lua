@@ -31,8 +31,6 @@ require('packer').startup(function(use)
 
   use { 'nvim-telescope/telescope.nvim', requires = {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }}
 
-  use 'brymer-meneses/grammar-guard.nvim'
-
   use 'tpope/vim-abolish'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'

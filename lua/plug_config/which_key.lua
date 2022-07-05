@@ -83,3 +83,7 @@ wk.register({
     t = {"<cmd>VimtexTocToggle<cr>", "toc tex"},
   }
 },{prefix = "<leader>"})
+
+wk.register({
+  x = {"xmonad"}
+},{prefix = "<leader>"})

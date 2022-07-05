@@ -1,1 +1,0 @@
-require("grammar-guard").init()

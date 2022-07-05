@@ -9,6 +9,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true})
+map('n', '<leader>x', ':e $HOME/.config/xmonad/xmonad.hs<cr>', {noremap = true})
 
 -- map jj to esc
 map('i', 'jj', '<esc>', {noremap = true})
