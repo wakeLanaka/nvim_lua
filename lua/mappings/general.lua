@@ -1,6 +1,3 @@
-local g = vim.g
-local exec = vim.api.nvim_exec -- execute Vimscript
-local opt = vim.opt
 local map = vim.api.nvim_set_keymap
 
 -- Remap space as leader key
@@ -8,8 +5,8 @@ vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true})
-map('n', '<leader>x', ':e $HOME/.config/xmonad/xmonad.hs<cr>', {noremap = true})
+map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true, desc = "config"})
+map('n', '<leader>x', ':e $HOME/.config/xmonad/xmonad.hs<cr>', {noremap = true, desc = "xmonad"})
 
 -- map jj to esc
 map('i', 'jj', '<esc>', {noremap = true})
@@ -67,28 +64,11 @@ map('n', '<c-s>', ':w<cr>', {noremap = true})
 
 -- shift mappings
 map('v', '<', '<gv', {noremap = true})
--- map('n', '<', '<<', {noremap = true})
 map('v', '>', '>gv', {noremap = true})
--- map('n', '>', '>>', {noremap = true})
 
 -- FOLDS
--- map('n', 'zt', 'za', {noremap = true})
 map('n', 'zO', 'zR', {noremap = true})
 map('n', 'zC', 'zM', {noremap = true})
-
--- RESIZING
--- map('n', '<m-j>', ':resize -2<cr>', {noremap = true})
--- map('n', '<m-k>', ':resize +2<cr>', {noremap = true})
--- map('n', '<m-h>', ':vertical resize -2', {noremap = true})
--- map('n', '<m-l>', ':vertical resize +2', {noremap = true})
-
--- TELESCOPE
-map('n', '<c-p>', '<cmd>Telescope find_files<cr>', { noremap = true, silent = true })
-map('n', '<c-f>', '<cmd>lua require"telescope.builtin".live_grep(require("telescope.themes").get_dropdown({}))<cr>', { noremap = true, silent = true })
-map('n', '<c-b>', '<cmd>Telescope buffers<cr>', {noremap = true})
-
--- open explorer
-map('n', '<c-e>', '<cmd>NvimTreeToggle<cr>', {noremap = true})
 
 -- INSERT
 map('i', '<c-o>', '<c-o>o', {noremap = true})
@@ -110,10 +90,28 @@ map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
 
--- QUICKFIX
--- map ('n', '<m-c>', '<cmd>lopen<cr>', {noremap = true})
--- map ('n', '<m-n>', '<cmd>lnext<cr>', {noremap = true})
--- map ('n', '<m-p>', '<cmd>lprevious<cr>', {noremap = true})
+-- DIAGNOSTIC
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>ld', vim.diagnostic.open_float, { noremap=true, silent=true, desc="line diagnostics"})
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>lq', vim.diagnostic.setloclist, { noremap=true, silent=true, desc="diagnostic loc"})
 
-map ('n', '<m-n>', '<cmd>lua require("trouble").next({skip_groups = true, jump = true})<cr>', {noremap = true})
-map ('n', '<m-p>', '<cmd>lua require("trouble").previous({skip_groups = true, jump = true})<cr>', {noremap = true})
+-- SPELLING
+map('n', '<leader>ss',"<cmd>set spell!<cr>",{desc = "start"})
+map('n', '<leader>sd',"<cmd>set spelllang=de<cr>",{desc = "deutsch"})
+map('n', '<leader>se',"<cmd>set spelllang=en<cr>",{desc = "english"})
+
+-- NETRW
+vim.api.nvim_create_autocmd('filetype', {
+  pattern = 'netrw',
+  desc = 'Better mappings for netrw',
+  callback = function()
+    local bind = function(lhs, rhs)
+      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
+    end
+
+    bind('<c-l>', '<c-w>l')
+    vim.keymap.set('n', '<c-n>', '<c-l>', {noremap = true, buffer = true})
+  end
+})

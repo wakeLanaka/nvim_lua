@@ -1,4 +1,3 @@
-local map = vim.api.nvim_set_keymap
 local actions = require "telescope.actions"
 
 require('telescope').setup {
