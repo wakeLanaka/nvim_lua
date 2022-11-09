@@ -1,7 +1,7 @@
 require('nvim-treesitter.configs').setup {
   ensure_installed = { "c", "c_sharp", "comment", "cpp", "css", "java",
   "javascript", "json", "latex", "bibtex", "lua", "markdown", "python", "typescript",
-  "haskell"},
+  "haskell", "go", "scala"},
   highlight = {
     enable = true,
     disable = {"latex"},

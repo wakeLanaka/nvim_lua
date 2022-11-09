@@ -1,8 +1,8 @@
-return function (client, bufnr)
+return function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<space>la', vim.lsp.buf.code_action, { noremap=true, silent=true, buffer=bufnr, desc="code actions"})
@@ -13,5 +13,4 @@ return function (client, bufnr)
   vim.keymap.set('n', '<space>lr', vim.lsp.buf.rename, { noremap=true, silent=true, buffer=bufnr, desc="rename"})
   vim.keymap.set('n', '<space>ls', vim.lsp.buf.signature_help, { noremap=true, silent=true, buffer=bufnr, desc="signature help"})
   vim.keymap.set('n', '<space>lt', vim.lsp.buf.type_definition, { noremap=true, silent=true, buffer=bufnr, desc="type definition"})
-  require('aerial').on_attach(client, bufnr)
 end

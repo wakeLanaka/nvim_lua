@@ -7,6 +7,7 @@ vim.g.maplocalleader = ' '
 
 map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true, desc = "config"})
 map('n', '<leader>x', ':e $HOME/.config/xmonad/xmonad.hs<cr>', {noremap = true, desc = "xmonad"})
+map("n", "<leader>a", "<cmd>AerialToggle!<cr>", {desc = "aerial"})
 
 -- map jj to esc
 map('i', 'jj', '<esc>', {noremap = true})
@@ -23,9 +24,6 @@ map('i', '<c-h>', '<esc><c-w>h', {noremap = true})
 map('i', '<c-j>', '<esc><c-w>j', {noremap = true})
 map('i', '<c-k>', '<esc><c-w>k', {noremap = true})
 map('i', '<c-l>', '<esc><c-w>l', {noremap = true})
-
--- search
-map('n', '*', '*N', {noremap = true})
 
 -- fast substitution repetition
 map('n', '&', ':&&<cr>', {noremap = true})
@@ -102,16 +100,7 @@ map('n', '<leader>ss',"<cmd>set spell!<cr>",{desc = "start"})
 map('n', '<leader>sd',"<cmd>set spelllang=de<cr>",{desc = "deutsch"})
 map('n', '<leader>se',"<cmd>set spelllang=en<cr>",{desc = "english"})
 
--- NETRW
-vim.api.nvim_create_autocmd('filetype', {
-  pattern = 'netrw',
-  desc = 'Better mappings for netrw',
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
-    end
-
-    bind('<c-l>', '<c-w>l')
-    vim.keymap.set('n', '<c-n>', '<c-l>', {noremap = true, buffer = true})
-  end
-})
+-- QUICKFIX
+map('n', '<M-q>',"<cmd>copen<cr>", {noremap = true})
+map('n', '<M-n>',"<cmd>cn<cr>", {noremap = true})
+map('n', '<M-p>',"<cmd>cp<cr>", {noremap = true})

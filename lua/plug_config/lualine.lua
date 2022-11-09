@@ -1,5 +1,6 @@
 require'lualine'.setup {
   options = {
+    theme = "catppuccin",
     icons_enabled = true,
     component_separators = { left = ' ', right = ' '},
     section_separators = { left = ' ', right = ' '},
@@ -8,8 +9,8 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
-    lualine_c = {'filename'},
-    lualine_x = {'aerial',
+    lualine_c = {'aerial'},
+    lualine_x = {
       {
         'diagnostics',
         sources={'nvim_diagnostic'},
@@ -18,8 +19,8 @@ require'lualine'.setup {
       }
     },
     lualine_y = {'filetype'},
-    lualine_z = {},
+    lualine_z = {'filename'},
   },
   tabline = {},
-  extensions = {}
+  extensions = {'aerial', 'nvim-tree'}
 }

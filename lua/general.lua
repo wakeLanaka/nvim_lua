@@ -24,6 +24,7 @@ vim.opt.cursorline = true -- display current row of cursor
 vim.opt.splitright = true -- vertical split to the right
 vim.opt.splitbelow = true -- orizontal split to the bottom
 vim.opt.linebreak = true -- wrap on word boundary
+vim.opt.laststatus = 3 -- set global statusline
 
 vim.o.hidden = true -- enable background buffers
 

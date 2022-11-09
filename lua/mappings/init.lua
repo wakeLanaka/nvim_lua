@@ -1,9 +1,9 @@
-require('mappings/aerial')
-require('mappings/general')
-require('mappings/gitsigns')
--- require('mappings/lsp')
-require('mappings/nvim_tree')
-require('mappings/telescope')
-require('mappings/trouble')
-require('mappings/vimtex')
-require('mappings/vimux')
+require('mappings/mappings')
+
+require('mappings/telescope_mappings')
+
+require('mappings/gitsigns_mappings')
+
+require('mappings/vimtex_mappings')
+
+-- require('mappings/lsp_mappings')

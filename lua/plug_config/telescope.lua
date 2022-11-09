@@ -1,11 +1,13 @@
 local actions = require "telescope.actions"
+local telescope = require("telescope")
 
-require('telescope').setup {
+telescope.setup {
   defaults = {
     mappings = {
       i = {
         ["<Esc>"] = actions.close,
-        -- ["<C-u>"] = { "<c-u>", type = "command" },
+        ["<C-u>"] = false,
+        ["<C-h>"] = "which_key",
       }
     }
   },
@@ -22,5 +24,5 @@ require('telescope').setup {
     }
   }
 }
-require('telescope').load_extension('aerial')
-require('telescope').load_extension('fzf')
+telescope.load_extension('aerial')
+telescope.load_extension('fzf')

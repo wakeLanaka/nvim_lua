@@ -8,4 +8,4 @@ require('plugins')
 
 require('plug_config/init')
 
-require('snippets')
+require('snippets/init')

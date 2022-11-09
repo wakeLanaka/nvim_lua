@@ -17,10 +17,14 @@ require('plug_config/autopairs')
 require('plug_config/lualine')
 
 require('plug_config/nvim_tree')
--- require('plug_config/netrw')
-
-require('plug_config/trouble')
 
 require('plug_config/aerial')
 
 require('plug_config/comment')
+
+require('plug_config/metals')
+
+require('plug_config/nrpattern')
+-- require('plug_config/netrw')
+-- require('plug_config/trouble')
+

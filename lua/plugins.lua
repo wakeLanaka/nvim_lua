@@ -1,8 +1,6 @@
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use '~/github/nvim_lua/themes/tokyonight.nvim'
-  use '~/github/nvim_lua/themes/rose-theme'
   use 'catppuccin/nvim'
 
   use 'L3MON4D3/LuaSnip'
@@ -15,12 +13,15 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'saadparwaiz1/cmp_luasnip'
 
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
-  use 'folke/trouble.nvim'
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
@@ -29,7 +30,13 @@ require('packer').startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
-  use { 'nvim-telescope/telescope.nvim', requires = {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }}
+  use 'zegervdv/nrpattern.nvim'
+
+  use { 'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        requires = {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }}
+
+  use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 
   use 'tpope/vim-abolish'
   use 'tpope/vim-surround'
@@ -38,6 +45,7 @@ require('packer').startup(function(use)
   -- use 'tpope/vim-vinegar'
 
   use 'lervag/vimtex'
+
   use 'christoomey/vim-tmux-navigator'
   use 'preservim/vimux'
   use 'folke/which-key.nvim'
