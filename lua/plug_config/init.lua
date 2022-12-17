@@ -25,6 +25,8 @@ require('plug_config/comment')
 require('plug_config/metals')
 
 require('plug_config/nrpattern')
+
+require('plug_config/tabline')
 -- require('plug_config/netrw')
 -- require('plug_config/trouble')
 

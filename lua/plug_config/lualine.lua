@@ -19,7 +19,7 @@ require'lualine'.setup {
       }
     },
     lualine_y = {'filetype'},
-    lualine_z = {'filename'},
+    lualine_z = {},
   },
   tabline = {},
   extensions = {'aerial', 'nvim-tree'}

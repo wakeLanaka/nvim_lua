@@ -88,6 +88,7 @@ map('i', '<down>', '<nop>', {noremap = true})
 map('i', '<left>', '<nop>', {noremap = true})
 map('i', '<right>', '<nop>', {noremap = true})
 
+
 -- DIAGNOSTIC
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>ld', vim.diagnostic.open_float, { noremap=true, silent=true, desc="line diagnostics"})

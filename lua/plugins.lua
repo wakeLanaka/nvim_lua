@@ -31,6 +31,7 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
 
   use 'zegervdv/nrpattern.nvim'
+  use 'kdheepak/tabline.nvim'
 
   use { 'nvim-telescope/telescope.nvim',
         tag = '0.1.0',
