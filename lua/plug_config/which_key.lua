@@ -1,18 +1,24 @@
 local wk = require("which-key")
 
-require'which-key'.setup{
+require('which-key').setup{
   plugins = {
+    marks = true,
+    registers = true,
     spelling = {
       enabled = true,
       suggestions = 20,
     },
     presets = {
-      operators = false,
+      operators = true,
       motions = false,
-      text_objects = false,
+      text_objects = true,
+      windows = true,
+      nav = true,
+      z = true,
+      g = true,
     }
   },
-  triggers_blacklist = {
+  riggers_blacklis = {
     i = {"j", "k"},
     v = {"j", "k"},
     n = {"d", "c"},
@@ -22,9 +28,12 @@ require'which-key'.setup{
   }
 }
 
-wk.register({f = {name = "find"}}, {prefix = "<leader>"})
-wk.register({g = {name = "git"}}, {prefix = "<leader>"})
-wk.register({l = {name = "lsp"}},{prefix = "<leader>"})
-wk.register({s = {name = "spelling"}},{prefix = "<leader>"})
-wk.register({v = {name = "vimux"}},{prefix = "<leader>"})
-
+wk.register({f = {name = "[f]ind"}}, {prefix = "<leader>"})
+wk.register({g = {name = "[g]it"}}, {prefix = "<leader>"})
+wk.register({l = {name = "[l]sp"}},{prefix = "<leader>"})
+wk.register({s = {name = "[s]pelling"}},{prefix = "<leader>"})
+wk.register({v = {name = "[v]imux"}},{prefix = "<leader>"})
+wk.register({x = {name = "e[x]ecute"}},{prefix = "<leader>"})
+wk.register({h = {name = "[h]ome"}},{prefix = "<leader>"})
+wk.register({r = {name = "[r]efactoring"}},{prefix = "<leader>"})
+-- wk.register({t = {name = "treesitter"}},{prefix = "<leader>"})

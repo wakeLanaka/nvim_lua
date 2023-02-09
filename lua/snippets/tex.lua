@@ -18,6 +18,21 @@ luaSnip.add_snippets(nil, {
 luaSnip.add_snippets(nil, {
   tex = {
     luaSnip.snip({
+      trig = "enumerate",
+      name = "enumerate",
+      dscr = "enumerate creation"
+    },
+    {
+      luaSnip.text({"\\begin{enumerate}", ""}),
+      luaSnip.text({"\t\\item "}), luaSnip.insert(0),
+      luaSnip.text({"", "\\end{enumerate}"})
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
       trig = "item",
       name = "item",
       dscr = "item creation"
@@ -122,7 +137,7 @@ luaSnip.add_snippets(nil, {
 luaSnip.add_snippets(nil, {
   tex = {
     luaSnip.snip({
-      trig = "textcolor",
+      trig = "color",
       name = "Textcolor",
       dscr = "Create a textcolor"
     },
@@ -142,6 +157,48 @@ luaSnip.add_snippets(nil, {
     },
     {
       luaSnip.text({ "\\begin{lstlisting}[style=" }), luaSnip.insert(1), luaSnip.text({ ", caption={" }), luaSnip.insert(2), luaSnip.text({"}]", ""}), luaSnip.insert(0), luaSnip.text({"", "\\end{lstlisting}"})
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "bf",
+      name = "Bold",
+      dscr = "make bold"
+    },
+    {
+        luaSnip.text({ "\\textbf{" }), luaSnip.insert(1), luaSnip.text({ "} " }), luaSnip.insert(0)
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "it",
+      name = "Italic",
+      dscr = "make italic"
+    },
+    {
+        luaSnip.text({ "\\textit{" }), luaSnip.insert(1), luaSnip.text({ "} " }), luaSnip.insert(0)
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "cgraphics",
+      name = "Center Graphics",
+      dscr = "Center Graphics"
+    },
+    {
+      luaSnip.text({"\\begin{center}", ""}),
+        luaSnip.text({"\t\\includegraphics[width=\\linewidth]{./img/"}), luaSnip.insert(1), luaSnip.text({"}"}),
+      luaSnip.text({"", "\\end{center}", ""}),
+      luaSnip.insert(0)
     })
   }
 })

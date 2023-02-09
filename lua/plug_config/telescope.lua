@@ -7,6 +7,7 @@ telescope.setup {
       i = {
         ["<Esc>"] = actions.close,
         ["<C-u>"] = false,
+        ["<C-d>"] = false,
         ["<C-h>"] = "which_key",
       }
     }
@@ -24,5 +25,5 @@ telescope.setup {
     }
   }
 }
-telescope.load_extension('aerial')
-telescope.load_extension('fzf')
+pcall(require('telescope').load_extension, 'aerial')
+pcall(require('telescope').load_extension, 'fzf')

@@ -1,19 +1,15 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
-map('n', '<c-p>', '<cmd>Telescope find_files<cr>', opts)
-map('n', '<c-f>', '<cmd>lua require"telescope.builtin".live_grep(require("telescope.themes").get_dropdown({}))<cr>', opts)
-map('n', '<c-b>', '<cmd>Telescope buffers<cr>', opts)
-map('n', '<leader>fc',"<cmd>Telescope colorscheme<cr>",{desc = "colorscheme"})
-map('n', '<leader>fm',"<cmd>Telescope marks<cr>",{desc = "marks"})
-map('n', '<leader>fo',"<cmd>Telescope oldfiles<cr>",{desc = "old files"})
-map('n', '<leader>ft',"<cmd>Telescope tags<cr>",{ desc = "tags"})
-map('n', '<leader>fw',"<cmd>Telescope grep_string<cr>",{desc = "word under cursor"})
-
--- GIT
-map('n', '<leader>gb',"<cmd> lua require('telescope.builtin').git_branches{}<cr>",{desc = "branches"})
-map('n', '<leader>gc',"<cmd> lua require('telescope.builtin').git_commits{}<cr>",{desc = "commits"})
-map('n', '<leader>gs',"<cmd> lua require('telescope.builtin').git_stash{}<cr>",{desc = "stash"})
-
--- LSP
-map('n', '<leader>lR',"<cmd>Telescope lsp_references<cr>",{desc = "references"})
+vim.keymap.set('n', '<c-f>', require("telescope.builtin").live_grep, { desc = "find" })
+vim.keymap.set('n', '<c-p>', require("telescope.builtin").find_files, { desc = "fuzzy finder" })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
+vim.keymap.set('n', '<leader>fc',require("telescope.builtin").colorscheme, {desc = "[c]olorscheme"})
+vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc = '[h]elp tags' })
+vim.keymap.set('n', '<leader>fm',require("telescope.builtin").marks, {desc = "[m]arks"})
+vim.keymap.set('n', '<leader>ft',require("telescope.builtin").tags, { desc = "[t]ags"})
+vim.keymap.set('n', '<leader>fw',require("telescope.builtin").grep_string, {desc = "[w]ord under cursor"})
+vim.keymap.set('n', '<leader>/', function()
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = 'search in buffer' })

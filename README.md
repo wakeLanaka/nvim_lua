@@ -18,7 +18,6 @@ Loads all occurences into quickfix
 
 `:cdo norm u`
 
-
 ### Substitution & key
 
 `g&` -> repeat last substitution on whole Buffer
@@ -28,7 +27,6 @@ Loads all occurences into quickfix
 ## Register
 
 % -> get path of current buffer. Handy with :lcd
-
 
 ## Global
 

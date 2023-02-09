@@ -9,3 +9,5 @@ require('plugins')
 require('plug_config/init')
 
 require('snippets/init')
+
+require('plugin_dev')

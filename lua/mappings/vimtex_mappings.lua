@@ -1,9 +1,9 @@
 local map = vim.api.nvim_set_keymap
 
-map('n', '<leader>vc',"<cmd>VimtexCompile<cr>",{desc = "compile tex"})
-map('n', '<leader>vt',"<cmd>VimtexTocToggle<cr>",{desc = "toc tex"})
+map('n', '<leader>vc',"<cmd>VimtexCompile<cr>",{desc = "[c]ompile tex"})
+map('n', '<leader>ve',"<cmd>VimtexErrors<cr>",{desc = "tex [e]errors"})
+map('n', '<leader>vt',"<cmd>VimtexTocToggle<cr>",{desc = "[t]oc tex"})
 
--- Vimux
-map('n', '<leader>vl',"<cmd>VimuxRunLastCommand<cr>",{desc = "last"})
-map('n', '<leader>vp',"<cmd>VimuxPromptCommand<cr>",{desc = "prompt"})
-map('n', '<leader>vo',"<cmd>VimuxOpenRunner<cr>",{desc = "open tmux"})
+map('n', '<leader>vl',"<cmd>VimuxRunLastCommand<cr>",{desc = "[l]ast"})
+map('n', '<leader>vp',"<cmd>VimuxPromptCommand<cr>",{desc = "[p]rompt"})
+map('n', '<leader>vo',"<cmd>VimuxOpenRunner<cr>",{desc = "[o]pen tmux"})

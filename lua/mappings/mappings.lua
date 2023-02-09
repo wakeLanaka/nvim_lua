@@ -1,107 +1,109 @@
-local map = vim.api.nvim_set_keymap
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Remap space as leader key
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.keymap.set('n', '<leader>.', ':e $MYVIMRC<cr>', { noremap = true, desc = "[.]config" })
+vim.keymap.set('n', '<leader>hx', ':e $HOME/.config/xmonad/xmonad.hs<cr>', { noremap = true, desc = "[x]monad" })
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<cr>", { desc = "[a]erial" })
+vim.keymap.set('n', '<leader>q', ':bd<cr>', { silent = true, desc = "[q]uit buffer" })
+vim.keymap.set('n', '<leader>m', ':messages<cr>', { noremap = true, desc = "[m]essages" })
 
-map('n', '<leader>.', ':e $MYVIMRC<cr>', {noremap = true, desc = "config"})
-map('n', '<leader>x', ':e $HOME/.config/xmonad/xmonad.hs<cr>', {noremap = true, desc = "xmonad"})
-map("n", "<leader>a", "<cmd>AerialToggle!<cr>", {desc = "aerial"})
+-- vim.keymap.set('n', '<leader>d', '"_d', { noremap = true, desc = ""})
+-- vim.keymap.set('n', '<leader>c', '"_c', { noremap = true, desc = ""})
+
+vim.keymap.set('n', '<c-d>', '<c-d>zz', { noremap = true })
+vim.keymap.set('n', '<c-u>', '<c-u>zz', { noremap = true })
 
 -- map jj to esc
-map('i', 'jj', '<esc>', {noremap = true})
-map('c', 'jj', '<esc>', {noremap = true})
-map('s', 'jj', '<esc>', {noremap = true})
+vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
+vim.keymap.set('c', 'jj', '<esc>', { noremap = true })
+vim.keymap.set('s', 'jj', '<esc>', { noremap = true })
 
 -- Fast split navigation with <ctrl> + hjkl
-map('n', '<c-h>', '<c-w>h', {noremap = true})
-map('n', '<c-j>', '<c-w>j', {noremap = true})
-map('n', '<c-k>', '<c-w>k', {noremap = true})
-map('n', '<c-l>', '<c-w>l', {noremap = true})
-map('n', '<c-c>', '<c-w>c', {noremap = true})
-map('i', '<c-h>', '<esc><c-w>h', {noremap = true})
-map('i', '<c-j>', '<esc><c-w>j', {noremap = true})
-map('i', '<c-k>', '<esc><c-w>k', {noremap = true})
-map('i', '<c-l>', '<esc><c-w>l', {noremap = true})
+vim.keymap.set('n', '<c-h>', '<c-w>h', { noremap = true })
+vim.keymap.set('n', '<c-j>', '<c-w>j', { noremap = true })
+vim.keymap.set('n', '<c-k>', '<c-w>k', { noremap = true })
+vim.keymap.set('n', '<c-l>', '<c-w>l', { noremap = true })
+vim.keymap.set('n', '<c-c>', '<c-w>c', { noremap = true })
+vim.keymap.set('i', '<c-h>', '<esc><c-w>h', { noremap = true })
+vim.keymap.set('i', '<c-j>', '<esc><c-w>j', { noremap = true })
+vim.keymap.set('i', '<c-k>', '<esc><c-w>k', { noremap = true })
+vim.keymap.set('i', '<c-l>', '<esc><c-w>l', { noremap = true })
 
 -- fast substitution repetition
-map('n', '&', ':&&<cr>', {noremap = true})
-map('x', '&', ':&&<cr>', {noremap = true})
+vim.keymap.set('n', '&', ':&&<cr>', { noremap = true })
+vim.keymap.set('x', '&', ':&&<cr>', { noremap = true })
 
 -- allows to move through display lines
-map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
-map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
-map('n', '^', 'g^', {noremap = true})
-map('n', '0', 'g0', {noremap = true})
-map('n', '$', 'g$', {noremap = true})
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', '^', 'g^', { noremap = true })
+vim.keymap.set('n', '0', 'g0', { noremap = true })
+vim.keymap.set('n', '$', 'g$', { noremap = true })
 
-map('n', 'J', 'gJ', {noremap = true})
-
--- in command-mode jump with <ctrl> + hl between words
-map('c', '<c-h>', '<c-left>', {noremap = true})
-map('c', '<c-l>', '<c-right>', {noremap = true})
+vim.keymap.set('n', 'J', 'gJ', { noremap = true })
 
 -- Y yank until the end of line
-map('n', 'Y', 'y$', { noremap = true })
+vim.keymap.set('n', 'Y', 'y$', { noremap = true })
 
 -- Tab navigation
-map('n', '<m-1>', '1gt', {noremap = true})
-map('n', '<m-2>', '2gt', {noremap = true})
-map('n', '<m-3>', '3gt', {noremap = true})
-map('n', '<m-4>', '4gt', {noremap = true})
-map('n', '<m-5>', '5gt', {noremap = true})
-map('n', '<m-6>', '6gt', {noremap = true})
-map('n', '<m-7>', '7gt', {noremap = true})
-map('n', '<m-8>', '8gt', {noremap = true})
-map('n', '<m-9>', '9gt', {noremap = true})
-map('n', '<c-t>', ':tabnew<cr>', {noremap = true})
+vim.keymap.set('n', '<m-1>', '1gt', { noremap = true })
+vim.keymap.set('n', '<m-2>', '2gt', { noremap = true })
+vim.keymap.set('n', '<m-3>', '3gt', { noremap = true })
+vim.keymap.set('n', '<m-4>', '4gt', { noremap = true })
+vim.keymap.set('n', '<m-5>', '5gt', { noremap = true })
+vim.keymap.set('n', '<m-6>', '6gt', { noremap = true })
+vim.keymap.set('n', '<m-7>', '7gt', { noremap = true })
+vim.keymap.set('n', '<m-8>', '8gt', { noremap = true })
+vim.keymap.set('n', '<m-9>', '9gt', { noremap = true })
+vim.keymap.set('n', '<c-t>', ':tabnew<cr>', { noremap = true })
 
 -- save file
-map('n', '<c-s>', ':w<cr>', {noremap = true})
+vim.keymap.set('n', '<c-s>', ':w<cr>', { noremap = true })
 
 -- shift mappings
-map('v', '<', '<gv', {noremap = true})
-map('v', '>', '>gv', {noremap = true})
+vim.keymap.set('v', '<', '<gv', { noremap = true })
+vim.keymap.set('v', '>', '>gv', { noremap = true })
 
 -- FOLDS
-map('n', 'zO', 'zR', {noremap = true})
-map('n', 'zC', 'zM', {noremap = true})
+vim.keymap.set('n', 'zO', 'zR', { noremap = true })
+vim.keymap.set('n', 'zC', 'zM', { noremap = true })
 
 -- INSERT
-map('i', '<c-o>', '<c-o>o', {noremap = true})
+vim.keymap.set('i', '<c-o>', '<c-o>o', { noremap = true })
 
 -- COMMAND MODE
-map('c', '<m-b>', '<s-left>', {noremap = true})
-map('c', '<m-w>', '<s-right>', {noremap = true})
-map('c', '<m-h>', '<left>', {noremap = true})
-map('c', '<m-l>', '<right>', {noremap = true})
+vim.keymap.set('c', '<m-b>', '<s-left>', { noremap = true })
+vim.keymap.set('c', '<m-w>', '<s-right>', { noremap = true })
+vim.keymap.set('c', '<m-h>', '<left>', { noremap = true })
+vim.keymap.set('c', '<m-l>', '<right>', { noremap = true })
+-- in command-mode jump with <ctrl> + hl between words
+-- vim.keymap.set('c', '<c-h>', '<c-left>', { noremap = true })
+-- vim.keymap.set('c', '<c-l>', '<c-right>', { noremap = true })
 
 -- UNBIND
-map('n', 'Q', '<nop>', {noremap = true})
-map('n', '<up>', '<nop>', {noremap = true})
-map('n', '<down>', '<nop>', {noremap = true})
-map('n', '<left>', '<nop>', {noremap = true})
-map('n', '<right>', '<nop>', {noremap = true})
-map('i', '<up>', '<nop>', {noremap = true})
-map('i', '<down>', '<nop>', {noremap = true})
-map('i', '<left>', '<nop>', {noremap = true})
-map('i', '<right>', '<nop>', {noremap = true})
-
-
--- DIAGNOSTIC
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>ld', vim.diagnostic.open_float, { noremap=true, silent=true, desc="line diagnostics"})
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>lq', vim.diagnostic.setloclist, { noremap=true, silent=true, desc="diagnostic loc"})
+vim.keymap.set('n', 'Q', '<nop>', { noremap = true })
+vim.keymap.set('n', '<up>', '<nop>', { noremap = true })
+vim.keymap.set('n', '<down>', '<nop>', { noremap = true })
+vim.keymap.set('n', '<left>', '<nop>', { noremap = true })
+vim.keymap.set('n', '<right>', '<nop>', { noremap = true })
+vim.keymap.set('i', '<up>', '<nop>', { noremap = true })
+vim.keymap.set('i', '<down>', '<nop>', { noremap = true })
+vim.keymap.set('i', '<left>', '<nop>', { noremap = true })
+vim.keymap.set('i', '<right>', '<nop>', { noremap = true })
 
 -- SPELLING
-map('n', '<leader>ss',"<cmd>set spell!<cr>",{desc = "start"})
-map('n', '<leader>sd',"<cmd>set spelllang=de<cr>",{desc = "deutsch"})
-map('n', '<leader>se',"<cmd>set spelllang=en<cr>",{desc = "english"})
+vim.keymap.set('n', '<leader>ss', "<cmd>set spell!<cr>", { desc = "[s]tart" })
+vim.keymap.set('n', '<leader>sd', "<cmd>set spelllang=de<cr>", { desc = "[d]eutsch" })
+vim.keymap.set('n', '<leader>se', "<cmd>set spelllang=en<cr>", { desc = "[e]nglish" })
 
 -- QUICKFIX
-map('n', '<M-q>',"<cmd>copen<cr>", {noremap = true})
-map('n', '<M-n>',"<cmd>cn<cr>", {noremap = true})
-map('n', '<M-p>',"<cmd>cp<cr>", {noremap = true})
+vim.keymap.set('n', '<M-q>', "<cmd>copen<cr>", { noremap = true })
+vim.keymap.set('n', '<M-n>', "<cmd>cn<cr>", { noremap = true })
+vim.keymap.set('n', '<M-p>', "<cmd>cp<cr>", { noremap = true })
+
+vim.keymap.set("n", "<leader>x%", "<cmd>w<cr><cmd>source %<cr>", {noremap = true, desc = "execute current file"})
+vim.keymap.set("n", "<leader>xt", "<Plug>PlenaryTestFile", {noremap = true, desc = "[t]est file"})
+
+vim.keymap.set("n", "<leader>t", "<cmd>TSPlaygroundToggle<cr>", {noremap = true, desc = "[t]reesitter playground"})
+
+vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier()<cr>")
+vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")

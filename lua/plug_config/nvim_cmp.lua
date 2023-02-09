@@ -1,29 +1,56 @@
+-- local kind_icons = {
+--   Text = "Txt", --"",
+--   Method = "", --"",
+--   Function = "",--"",
+--   Constructor = "華",
+--   Field = "Field",--"",
+--   Variable = "Var",--"",
+--   Class = "",--"ﴯ",
+--   Interface = "Int",--"",
+--   Module = "Module",--"Mo",
+--   Property = "Prop",--"ﰠ",
+--   Unit = "Unit",--"",
+--   Value = "Val",--"",
+--   Enum = "Enum",--"",
+--   Keyword = "",
+--   Snippet = "Snip",
+--   Color = "",
+--   File = " ",
+--   Reference = "Ref",--" ",
+--   Folder = "",
+--   EnumMember = "EnumMem",--"",
+--   Constant = "Const",--"",
+--   Struct = "Struct",--"",
+--   Event = "Event",--"",
+--   Operator = "Op",--"",
+--   TypeParameter = "Type",--""
+-- }
 local kind_icons = {
-  Text = "Txt", --"",
-  Method = "", --"",
-  Function = "",--"",
-  Constructor = "華",
-  Field = "Field",--"",
-  Variable = "Var",--"",
-  Class = "",--"ﴯ",
-  Interface = "Int",--"",
-  Module = "Module",--"Mo",
-  Property = "Prop",--"ﰠ",
-  Unit = "Unit",--"",
-  Value = "Val",--"",
-  Enum = "Enum",--"",
-  Keyword = "",
-  Snippet = "Snip",
-  Color = "",
-  File = " ",
-  Reference = "Ref",--" ",
-  Folder = "",
-  EnumMember = "EnumMem",--"",
-  Constant = "Const",--"",
-  Struct = "Struct",--"",
-  Event = "Event",--"",
-  Operator = "Op",--"",
-  TypeParameter = "Type",--""
+  Text = '  ',
+  Method = '  ',
+  Function = '  ',
+  Constructor = '  ',
+  Field = '  ',
+  Variable = '  ',
+  Class = '  ',
+  Interface = '  ',
+  Module = '  ',
+  Property = '  ',
+  Unit = '  ',
+  Value = '  ',
+  Enum = '  ',
+  Keyword = '  ',
+  Snippet = '  ',
+  Color = '  ',
+  File = '  ',
+  Reference = '  ',
+  Folder = '  ',
+  EnumMember = '  ',
+  Constant = '  ',
+  Struct = '  ',
+  Event = '  ',
+  Operator = '  ',
+  TypeParameter = '  ',
 }
 
 -- Setup nvim-cmp.
@@ -103,12 +130,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'nvim_lua'},
-    { name = 'buffer'},
-  },
-  window = {
-    documentation = {
-      border = { "╭","─","╮","│","╯","─","╰","│" },
-    },
+    -- { name = 'buffer'},
   },
   formatting = {
     format = function(entry, vim_item)
@@ -118,7 +140,7 @@ cmp.setup {
         nvim_lua = " ",
         treesitter = " ",
         path = " ",
-        buffer = "﬘ ",
+        buffer = " ",
         bash = " ",
         luasnip = " ",
       })[entry.source.name]
@@ -126,20 +148,29 @@ cmp.setup {
     end,
   },
  completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menuone'
   }
 }
 
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
+cmp.setup.cmdline('/', {
+  -- mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
 
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      {name = 'path'},
-      { name = 'cmdline' },
-      { name = 'buffer' }
-    })
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' },
+    { name = 'cmdline' },
+    { name = 'buffer' }
   })
+})
+
+cmp.setup.filetype({ 'vim' }, {
+  sources = cmp.config.sources({
+    { name = 'path' },
+    { name = 'cmdline' },
+    { name = 'buffer' }
+  })
+})
