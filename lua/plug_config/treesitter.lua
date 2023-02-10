@@ -59,15 +59,15 @@ require('nvim-treesitter.configs').setup {
       },
     },
     swap = {
-      enable = false,
-      -- swap_next = {
-      --   ['<leader>pi'] = '@parameter.inner',
-      --   ['<leader>pa'] = '@parameter.outer',
-      -- },
-      -- swap_previous = {
-      --   ['<leader>Pi'] = '@parameter.inner',
+      enable = true,
+      swap_next = {
+        ['<leader>lp'] = {query = '@parameter.inner', desc = "swap next [p]arameters"},
+        -- ['<leader>pa'] = '@parameter.outer',
+      },
+      swap_previous = {
+        ['<leader>lP'] = {query = '@parameter.inner', desc = "swap previous [P]arameter"},
       --   ['<leader>Pa'] = '@parameter.outer',
-      -- },
+      },
     },
     lsp_interop = {
       enable = true,
