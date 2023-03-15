@@ -39,12 +39,12 @@ require('nvim-treesitter.configs').setup {
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
         [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
+        [']['] = '@class.outer',
         [']a'] = '@parameter.outer',
       },
       goto_next_end = {
         [']M'] = '@function.outer',
-        [']['] = '@class.outer',
+        [']]'] = '@class.outer',
         [']A'] = '@parameter.outer',
       },
       goto_previous_start = {
@@ -61,11 +61,11 @@ require('nvim-treesitter.configs').setup {
     swap = {
       enable = true,
       swap_next = {
-        ['<leader>lp'] = {query = '@parameter.inner', desc = "swap next [p]arameters"},
+        ['<leader>la'] = {query = '@parameter.inner', desc = "swap next [a]rgument"},
         -- ['<leader>pa'] = '@parameter.outer',
       },
       swap_previous = {
-        ['<leader>lP'] = {query = '@parameter.inner', desc = "swap previous [P]arameter"},
+        ['<leader>lA'] = {query = '@parameter.inner', desc = "swap previous [A]rgument"},
       --   ['<leader>Pa'] = '@parameter.outer',
       },
     },
@@ -74,7 +74,7 @@ require('nvim-treesitter.configs').setup {
       border = 'none',
       peek_definition_code = {
         ["<leader>lm"] = {query = "@function.outer", desc = "[m]method information"},
-        ["<leader>l["] = {query = "@class.outer", desc = "[c]lass information"},
+        ["<leader>l["] = {query = "@class.outer", desc = "class information"},
       },
     }
   },

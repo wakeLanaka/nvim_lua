@@ -5,8 +5,19 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
+
 require('packer').startup(function(use)
+
+  local use_local = function (name)
+    local plugin_path = '~/github/' .. name
+    use(plugin_path)
+  end
+
   use 'wbthomason/packer.nvim'
+
+  use 'kshenoy/vim-signature'
+
+  use 'sindrets/diffview.nvim'
 
   use {
     'neovim/nvim-lspconfig',
@@ -48,9 +59,6 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
-  use '/home/reto/github/refactor.nvim'
-
-  use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'stevearc/aerial.nvim'
@@ -79,4 +87,7 @@ require('packer').startup(function(use)
   use 'lervag/vimtex'
   use 'preservim/vimux'
   use 'folke/which-key.nvim'
+
+  use_local 'refactor.nvim'
+  use_local 'enclosing.nvim'
 end)

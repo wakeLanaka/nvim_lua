@@ -7,8 +7,8 @@ return function(_, bufnr)
     require('telescope.builtin').lsp_references(require('telescope.themes').get_dropdown {})
   end, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', '<space>la', vim.lsp.buf.code_action,
-    { noremap = true, silent = true, buffer = bufnr, desc = "code [a]ctions" })
+  -- vim.keymap.set('n', '<space>la', vim.lsp.buf.code_action,
+  --   { noremap = true, silent = true, buffer = bufnr, desc = "code [a]ctions" })
   vim.keymap.set('n', '<leader>lD', require('telescope.builtin').diagnostics, { desc = '[d]iagnostics' })
   vim.keymap.set('n', '<leader>lS', require('telescope.builtin').lsp_document_symbols, { desc = 'document [S]ymbols' })
   vim.keymap.set('n', '<leader>lW', require('telescope.builtin').lsp_dynamic_workspace_symbols,

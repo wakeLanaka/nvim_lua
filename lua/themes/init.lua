@@ -1,7 +1,7 @@
 local catppuccin = require("catppuccin")
 
 catppuccin.setup({
-  flavour = "frappe",
+  flavour = "macchiato",
   transparent_background = false,
   term_colors = false,
   integrations = {

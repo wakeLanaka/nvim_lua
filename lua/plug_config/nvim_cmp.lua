@@ -30,31 +30,6 @@ local kind_icons = {
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local handlers = require('nvim-autopairs.completion.handlers')
-cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({
-  filetypes = {
-    ["*"] = {
-      ["("] = {
-        kind = {
-          cmp.lsp.CompletionItemKind.Function,
-          cmp.lsp.CompletionItemKind.Method,
-        },
-        handler = handlers["*"]
-      }
-    },
-     tex = {
-      ["{"] = {
-        kind = {
-          cmp.lsp.CompletionItemKind.Function,
-          cmp.lsp.CompletionItemKind.Method,
-        },
-        handler = handlers["*"]
-      }
-    }
-  }
-}))
-
 cmp.setup {
   snippet = {
     expand = function(args)

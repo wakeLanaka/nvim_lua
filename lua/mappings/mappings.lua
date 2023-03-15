@@ -3,7 +3,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', '<leader>.', ':e $MYVIMRC<cr>', { noremap = true, desc = "[.]config" })
 vim.keymap.set('n', '<leader>hx', ':e $HOME/.config/xmonad/xmonad.hs<cr>', { noremap = true, desc = "[x]monad" })
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<cr>", { desc = "[a]erial" })
-vim.keymap.set('n', '<leader>q', ':bd<cr>', { silent = true, desc = "[q]uit buffer" })
+vim.keymap.set('n', '<leader>q', ':b #|bd #<cr>', { silent = true, desc = "[q]uit buffer" })
 vim.keymap.set('n', '<leader>m', ':messages<cr>', { noremap = true, desc = "[m]essages" })
 
 -- vim.keymap.set('n', '<leader>d', '"_d', { noremap = true, desc = ""})
@@ -23,10 +23,10 @@ vim.keymap.set('n', '<c-j>', '<c-w>j', { noremap = true })
 vim.keymap.set('n', '<c-k>', '<c-w>k', { noremap = true })
 vim.keymap.set('n', '<c-l>', '<c-w>l', { noremap = true })
 vim.keymap.set('n', '<c-c>', '<c-w>c', { noremap = true })
-vim.keymap.set('i', '<c-h>', '<esc><c-w>h', { noremap = true })
-vim.keymap.set('i', '<c-j>', '<esc><c-w>j', { noremap = true })
-vim.keymap.set('i', '<c-k>', '<esc><c-w>k', { noremap = true })
-vim.keymap.set('i', '<c-l>', '<esc><c-w>l', { noremap = true })
+-- vim.keymap.set('i', '<c-h>', '<esc><c-w>h', { noremap = true })
+-- vim.keymap.set('i', '<c-j>', '<esc><c-w>j', { noremap = true })
+-- vim.keymap.set('i', '<c-k>', '<esc><c-w>k', { noremap = true })
+-- vim.keymap.set('i', '<c-l>', '<esc><c-w>l', { noremap = true })
 
 -- fast substitution repetition
 vim.keymap.set('n', '&', ':&&<cr>', { noremap = true })
@@ -68,7 +68,9 @@ vim.keymap.set('n', 'zO', 'zR', { noremap = true })
 vim.keymap.set('n', 'zC', 'zM', { noremap = true })
 
 -- INSERT
-vim.keymap.set('i', '<c-o>', '<c-o>o', { noremap = true })
+vim.keymap.set('i', '<c-k>', '<c-o>O', { noremap = true })
+vim.keymap.set('i', '<c-e>', '<c-o>A', { noremap = true })
+vim.keymap.set('i', '<c-a>', '<c-o>^', { noremap = true })
 
 -- COMMAND MODE
 vim.keymap.set('c', '<m-b>', '<s-left>', { noremap = true })
@@ -107,3 +109,15 @@ vim.keymap.set("n", "<leader>t", "<cmd>TSPlaygroundToggle<cr>", {noremap = true,
 
 vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier()<cr>")
 vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")
+vim.keymap.set("v", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
+vim.keymap.set("n", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
+vim.keymap.set("i", "<C-l>", "<cmd>lua require('enclosing').close_enclosing()<cr>")
+
+-- toggle search highlight
+vim.keymap.set("n", "<M-h>", function()
+  if vim.v.hlsearch == 1 then
+    vim.cmd("nohlsearch")
+  else
+    vim.cmd("set hlsearch")
+  end
+end)

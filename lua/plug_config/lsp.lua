@@ -27,7 +27,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- -- Enable the following language servers
-local servers = {--[[ "ltex",  ]] "texlab", "hls", "sumneko_lua", "yamlls", "pyright", "clangd"}
+local servers = { --[[ "ltex", ]] "texlab", "lua_ls",  "hls", "yamlls", "pyright", "clangd"}
 
 require("mason-lspconfig").setup{
   ensure_installed = servers,
@@ -44,7 +44,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
 table.insert(runtime_path, 'lua/?/init.lua')
 
-require('lspconfig').sumneko_lua.setup {
+require('lspconfig').lua_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
