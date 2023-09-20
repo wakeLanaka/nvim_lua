@@ -1,39 +1,26 @@
--- Install packer
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-  vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-
-require('packer').startup(function(use)
-
-  local use_local = function (name)
-    local plugin_path = '~/github/' .. name
-    use(plugin_path)
-  end
-
-  use 'wbthomason/packer.nvim'
-
-  use 'kshenoy/vim-signature'
-
-  use 'sindrets/diffview.nvim'
-
-  use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'j-hui/fidget.nvim',
-    },
-  }
-
-  use 'catppuccin/nvim'
-  use 'nvim-lualine/lualine.nvim'
-
-  use {
+require("lazy").setup({
+  'nvim-lua/plenary.nvim',
+  'neovim/nvim-lspconfig',
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'catppuccin/nvim',
+  'nvim-lualine/lualine.nvim',
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
+    dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
       'hrsh7th/cmp-path',
@@ -43,51 +30,38 @@ require('packer').startup(function(use)
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip'
     }
-  }
-
-  use {
+  },
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
-  }
-
-  use "nvim-treesitter/playground"
-
-  use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter',
-  }
-
-  use 'kyazdani42/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'stevearc/aerial.nvim'
-
-  use 'numToStr/Comment.nvim'
-
-  use 'zegervdv/nrpattern.nvim'
-  use 'kdheepak/tabline.nvim'
-
-  use 'nvim-lua/plenary.nvim'
-
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x'}
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
-  use 'scalameta/nvim-metals'
-
-  use 'tpope/vim-abolish'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'tpope/vim-speeddating'
-  use 'lewis6991/gitsigns.nvim'
-
-  use 'christoomey/vim-tmux-navigator'
-  use 'lervag/vimtex'
-  use 'preservim/vimux'
-  use 'folke/which-key.nvim'
-
-  use_local 'refactor.nvim'
-  use_local 'enclosing.nvim'
-end)
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    }
+  },
+  'kyazdani42/nvim-tree.lua',
+  'kyazdani42/nvim-web-devicons',
+  'numToStr/Comment.nvim',
+  {
+    'nvim-telescope/telescope.nvim',
+    branch = '0.1.x',
+    dependencies = {
+      {'nvim-telescope/telescope-fzf-native.nvim', cmd = 'Make'},
+      "nvim-telescope/telescope-file-browser.nvim"
+    }
+  },
+  'tpope/vim-abolish',
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  'tpope/vim-surround',
+  'tpope/vim-repeat',
+  'tpope/vim-speeddating',
+  'christoomey/vim-tmux-navigator',
+  'lervag/vimtex',
+  'preservim/vimux',
+  { dir = "~/github/refactor.nvim"},
+  { dir = "~/github/enclosing.nvim"},
+  { 'folke/which-key.nvim'--[[ , cond = false ]]},
+  {'scalameta/nvim-metals', cond = false},
+  {'nvim-treesitter/playground', cond = false},
+  {'lewis6991/gitsigns.nvim', cond = false},
+  {'github/copilot.vim', cond = false}
+})

@@ -12,7 +12,7 @@ vim.o.thesaurus="~/.config/nvim/thesaurus/openthesaurus.txt"
 vim.o.updatetime = 250 -- Decrease update time
 vim.opt.backup = false -- would create a backup-file everytime a file is overwritten
 vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
-vim.opt.colorcolumn = '120' -- display 120th column
+vim.opt.colorcolumn = "80" -- display 80th column
 vim.opt.cursorline = true -- display current row of cursor
 vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.laststatus = 3 -- set global statusline
@@ -29,7 +29,7 @@ vim.opt.splitbelow = true -- orizontal split to the bottom
 vim.opt.splitright = true -- vertical split to the right
 vim.opt.swapfile = false -- do not generate any swafiles
 vim.opt.tabstop = 2 -- 1 tab == 2 spaces
-vim.opt.textwidth = 120 -- auto new line at 120 column
+vim.opt.textwidth = 80 -- auto new line at 80th column
 vim.opt.undofile = true
 vim.opt.undolevels=1000
 vim.opt.viewdir = '$HOME/.config/nvim/views'
@@ -41,13 +41,13 @@ vim.wo.signcolumn = 'yes' -- where to display icons on number column
 
 -- FUNCTIONS
 -- auto-save fold views
-vim.api.nvim_exec( [[
-augroup remember_folds
-    autocmd!
-    autocmd BufWinLeave ?* silent! mkview
-    autocmd BufWinEnter ?* silent! loadview
-augroup end
-]], false)
+-- vim.api.nvim_exec( [[
+-- augroup remember_folds
+--     autocmd!
+--     autocmd BufWinLeave ?* silent! mkview
+--     autocmd BufWinEnter ?* silent! loadview
+-- augroup end
+-- ]], false)
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

@@ -28,6 +28,12 @@ local ascii = {
     "",
     "Use { ctrl+l, a, ctrl+j, ctrl+k",
     "",
+    "Use :setfiletype",
+    "",
+    "INSERT MODE:",
+    "<c-a> beginning of line",
+    "<c-e> end of line",
+    "",
     "▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔",
 }
 

@@ -9,12 +9,15 @@ telescope.setup {
         ["<C-u>"] = false,
         ["<C-d>"] = false,
         ["<C-h>"] = "which_key",
-      }
+      },
+      file_ignore_patterns = {
+        -- "node_modules/", -- does not work...
+        -- "target/", -- does not work...
+      },
     }
   },
   extensions = {
     aerial = {
-      -- Display symbols as <root>.<parent>.<symbol>
       show_nesting = true
     },
     fzf = {
@@ -27,3 +30,4 @@ telescope.setup {
 }
 pcall(require('telescope').load_extension, 'aerial')
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'file_browser')

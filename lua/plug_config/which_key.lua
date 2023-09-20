@@ -18,7 +18,7 @@ require('which-key').setup{
       g = true,
     }
   },
-  riggers_blacklis = {
+  riggers_blacklist = {
     i = {"j", "k"},
     v = {"j", "k"},
     n = {"d", "c"},

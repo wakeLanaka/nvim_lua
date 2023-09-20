@@ -1,9 +1,24 @@
+local function my_on_attach(bufnr)
+  local api = require("nvim-tree.api")
+
+  local function opts(desc)
+    return {desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true}
+  end
+
+  vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Edit"))
+  vim.keymap.set("n", "l", api.node.open.edit, opts("Edit"))
+  vim.keymap.set("n", "o", api.node.open.edit, opts("Edit"))
+  vim.keymap.set("n", "<C-e>", api.tree.close, opts("Close"))
+  vim.keymap.set("n", "h", api.tree.collapse_all, opts("Collapse"))
+end
+
 require'nvim-tree'.setup {
+  on_attach = my_on_attach,
   respect_buf_cwd = true,
   disable_netrw       = false,
   hijack_netrw        = true,
-  open_on_setup       = false,
-  ignore_ft_on_setup  = {},
+  -- open_on_setup       = false,
+  -- ignore_ft_on_setup  = {},
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -38,15 +53,6 @@ require'nvim-tree'.setup {
     width = 30,
     hide_root_folder = false,
     side = 'left',
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = {"<CR>", "o", "<2-LeftMouse>", "l"}, action = "edit" },
-        { key = "h", action = "close_node" },
-        { key = "y", action = "copy" },
-        { key = "<C-e>", action = "" },
-      }
-    }
   },
   renderer = {
     highlight_git = true,
@@ -78,4 +84,3 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 map('n', '<c-e>', '<cmd>NvimTreeToggle<cr>', opts)
--- map('n', '<c-e>', '<cmd>Vexplore<cr>', opts)

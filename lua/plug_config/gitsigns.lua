@@ -12,7 +12,6 @@ require('gitsigns').setup {
   linehl= false,
   current_line_blame = false,
   current_line_blame_formatter = '<author>, <author_time:%d/%m/%Y> - <summary>',
-  keymaps = {} -- remove keymappings
 }
 
 vim.cmd[[

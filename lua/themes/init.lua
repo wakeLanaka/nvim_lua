@@ -1,9 +1,13 @@
 local catppuccin = require("catppuccin")
 
 catppuccin.setup({
-  flavour = "macchiato",
+  flavour = "mocha",
+  background = {
+    light = "latte",
+    dark = "mocha",
+  },
   transparent_background = false,
-  term_colors = false,
+  term_colors = true,
   integrations = {
     which_key = true,
     lsp_trouble = true,
@@ -12,6 +16,7 @@ catppuccin.setup({
     gitsigns = true,
     cmp = true,
     treesitter = true,
+    fidget = true,
     nvimtree = {
       show_root = false,
     },
@@ -19,7 +24,7 @@ catppuccin.setup({
   },
   dim_inactive = {
     enabled = false,
-    shade = "window",
+    shade = "dark",
     percentage = 0.15,
   },
   compile = {
@@ -44,12 +49,26 @@ catppuccin.setup({
   color_overrides = {},
   custom_highlights = {},
   native_lsp = {
-    enabled = true
-  }
+      enabled = true,
+      virtual_text = {
+          errors = { "italic" },
+          hints = { "italic" },
+          warnings = { "italic" },
+          information = { "italic" },
+      },
+      underlines = {
+          errors = { "underline" },
+          hints = { "underline" },
+          warnings = { "underline" },
+          information = { "underline" },
+      },
+  },
 })
 
 vim.opt.termguicolors = true
-vim.api.nvim_command "colorscheme catppuccin"
+vim.cmd.colorscheme "catppuccin"
 
-vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#303446"})
+vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#1E1E2E"}) -- mocha
+-- vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#24273A"}) -- machiattio
+-- vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#303446"}) -- frappe
 -- vim.api.nvim_set_hl(0, 'Whitespace', {fg="#BCB9E6"}) -- Color for trailing whitespaces
