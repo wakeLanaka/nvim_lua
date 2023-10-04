@@ -9,7 +9,6 @@ require'lualine'.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff'},
-    lualine_c = {'aerial'},
     lualine_x = {
       {
         'diagnostics',
@@ -22,5 +21,4 @@ require'lualine'.setup {
     lualine_z = {},
   },
   tabline = {},
-  extensions = {'aerial', 'nvim-tree'}
 }

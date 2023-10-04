@@ -3,6 +3,7 @@ local telescope = require("telescope")
 
 telescope.setup {
   defaults = {
+    path_display = {truncate = 1},
     mappings = {
       i = {
         ["<Esc>"] = actions.close,
@@ -17,9 +18,9 @@ telescope.setup {
     }
   },
   extensions = {
-    aerial = {
-      show_nesting = true
-    },
+    -- aerial = {
+    --   show_nesting = true
+    -- },
     fzf = {
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
@@ -28,6 +29,6 @@ telescope.setup {
     }
   }
 }
-pcall(require('telescope').load_extension, 'aerial')
+-- pcall(require('telescope').load_extension, 'aerial')
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'file_browser')

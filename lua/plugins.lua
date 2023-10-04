@@ -37,14 +37,13 @@ require("lazy").setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     }
   },
-  'kyazdani42/nvim-tree.lua',
   'kyazdani42/nvim-web-devicons',
   'numToStr/Comment.nvim',
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     dependencies = {
-      {'nvim-telescope/telescope-fzf-native.nvim', cmd = 'Make'},
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
       "nvim-telescope/telescope-file-browser.nvim"
     }
   },
@@ -60,8 +59,10 @@ require("lazy").setup({
   { dir = "~/github/refactor.nvim"},
   { dir = "~/github/enclosing.nvim"},
   { 'folke/which-key.nvim'--[[ , cond = false ]]},
-  {'scalameta/nvim-metals', cond = false},
-  {'nvim-treesitter/playground', cond = false},
+
+  {'github/copilot.vim', cond = false},
+  {'kyazdani42/nvim-tree.lua', cond = false},
   {'lewis6991/gitsigns.nvim', cond = false},
-  {'github/copilot.vim', cond = false}
+  {'nvim-treesitter/playground', cond = false},
+  {'scalameta/nvim-metals', cond = false},
 })

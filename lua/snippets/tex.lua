@@ -367,7 +367,7 @@ luaSnip.add_snippets(nil, {
       dscr = "Create a listing"
     },
     {
-      luaSnip.text({"\\lstinputlisting[language="}), luaSnip.insert(1, "Java"), luaSnip.text({", caption={"}), luaSnip.insert(2), luaSnip.text({"}]{code/" }), luaSnip.insert(0), luaSnip.text({"}"})
+      luaSnip.text({"\\lstinputlisting[language="}), luaSnip.insert(1, "Java"), luaSnip.text({", caption={"}), luaSnip.insert(2), luaSnip.text({"}]{./code/" }), luaSnip.insert(0), luaSnip.text({"}"})
     })
   }
 })

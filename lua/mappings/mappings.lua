@@ -24,8 +24,6 @@ vim.keymap.set('n', '&', ':&&<cr>', { noremap = true })
 vim.keymap.set('x', '&', ':&&<cr>', { noremap = true })
 
 -- allows to move through display lines
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', '^', 'g^', { noremap = true })
 vim.keymap.set('n', '0', 'g0', { noremap = true })
 vim.keymap.set('n', '$', 'g$', { noremap = true })
@@ -70,7 +68,7 @@ vim.keymap.set('c', '<m-h>', '<left>', { noremap = true })
 vim.keymap.set('c', '<m-l>', '<right>', { noremap = true })
 
 -- UNBIND
-vim.keymap.set('n', 'Q', '<nop>', { noremap = true })
+-- vim.keymap.set('n', 'Q', '<nop>', { noremap = true })
 vim.keymap.set('n', '<up>', '<nop>', { noremap = true })
 vim.keymap.set('n', '<down>', '<nop>', { noremap = true })
 vim.keymap.set('n', '<left>', '<nop>', { noremap = true })
@@ -82,8 +80,8 @@ vim.keymap.set('i', '<right>', '<nop>', { noremap = true })
 
 -- QUICKFIX
 vim.keymap.set('n', '<M-q>', "<cmd>copen<cr>", { noremap = true })
-vim.keymap.set('n', '<M-n>', "<cmd>cn<cr>", { noremap = true })
-vim.keymap.set('n', '<M-p>', "<cmd>cp<cr>", { noremap = true })
+vim.keymap.set('n', '<M-j>', "<cmd>cn<cr>", { noremap = true })
+vim.keymap.set('n', '<M-k>', "<cmd>cp<cr>", { noremap = true })
 
 vim.keymap.set("i", "<C-l>", "<cmd>lua require('enclosing').close_enclosing()<cr>")
 
@@ -95,3 +93,22 @@ vim.keymap.set("n", "<M-h>", function()
     vim.cmd("set hlsearch")
   end
 end)
+
+-- add relative jump to jumplist
+vim.keymap.set("n", "j", function()
+    print(vim.v.count)
+    if vim.v.count > 1 then
+        return "m'" .. vim.v.count .. "j"
+    else
+        return "gj"
+    end
+end, {expr = true, noremap = true})
+
+vim.keymap.set("n", "k", function()
+    print(vim.v.count)
+    if vim.v.count > 1 then
+        return "m'" .. vim.v.count .. "k"
+    else
+        return "gk"
+    end
+end, {expr = true, noremap = true})

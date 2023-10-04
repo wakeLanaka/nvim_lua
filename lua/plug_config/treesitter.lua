@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "c", "c_sharp", "comment", "cpp", --[[ "java", ]]
+  ensure_installed = { "c", "c_sharp", "comment", "cpp", "java",
   "javascript", "json", "latex", "bibtex", "lua", "markdown", "python", "typescript",
   "haskell", "go", "scala", "matlab"},
   highlight = {
