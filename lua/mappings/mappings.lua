@@ -96,7 +96,6 @@ end)
 
 -- add relative jump to jumplist
 vim.keymap.set("n", "j", function()
-    print(vim.v.count)
     if vim.v.count > 1 then
         return "m'" .. vim.v.count .. "j"
     else
@@ -105,7 +104,6 @@ vim.keymap.set("n", "j", function()
 end, {expr = true, noremap = true})
 
 vim.keymap.set("n", "k", function()
-    print(vim.v.count)
     if vim.v.count > 1 then
         return "m'" .. vim.v.count .. "k"
     else

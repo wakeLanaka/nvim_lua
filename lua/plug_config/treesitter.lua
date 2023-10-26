@@ -4,7 +4,8 @@ require('nvim-treesitter.configs').setup {
   "haskell", "go", "scala", "matlab"},
   highlight = {
     enable = true,
-    use_languagetree = false,
+    additional_vim_regex_highlighting = false,
+    -- use_languagetree = false,
     disable = {"latex"},
   },
   indent = { enable = true },

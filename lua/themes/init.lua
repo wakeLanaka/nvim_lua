@@ -47,7 +47,11 @@ catppuccin.setup({
       operators = {},
   },
   color_overrides = {},
-  custom_highlights = {},
+  custom_highlights = function(colors)
+    return {
+      LineNr = {fg = colors.overlay0}
+    }
+  end,
   native_lsp = {
       enabled = true,
       virtual_text = {
@@ -68,7 +72,7 @@ catppuccin.setup({
 vim.opt.termguicolors = true
 vim.cmd.colorscheme "catppuccin"
 
-vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#1E1E2E"}) -- mocha
+-- vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#1E1E2E"}) -- mocha
 -- vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#24273A"}) -- machiattio
 -- vim.api.nvim_set_hl(0, 'NormalFloat', {bg="#303446"}) -- frappe
 -- vim.api.nvim_set_hl(0, 'Whitespace', {fg="#BCB9E6"}) -- Color for trailing whitespaces

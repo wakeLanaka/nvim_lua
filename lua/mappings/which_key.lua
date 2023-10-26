@@ -20,4 +20,6 @@ vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier
 vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")
 vim.keymap.set("v", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
 
-vim.keymap.set("n", "<leader>c", ":e %:h/", {noremap = true, desc = "[c]reate file"})
+vim.keymap.set("n", "<leader>c", function()
+  return ":e " .. vim.fn.expand('%:h') .. "/"
+end, { expr = true, noremap = true, desc = "[c]reate file"})
