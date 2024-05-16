@@ -1,1 +1,1 @@
-vim.opt.shiftwidth = 4 -- shift 4 spaces when tab
+vim.opt.shiftwidth = 2 -- shift 2 spaces when tab

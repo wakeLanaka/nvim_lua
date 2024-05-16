@@ -1,3 +1,4 @@
+-- see :help lua-guide
 P = function(value)
   print(vim.inspect(value))
   return value

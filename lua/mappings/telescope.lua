@@ -1,7 +1,6 @@
-vim.api.nvim_set_keymap("n", "<c-e>", "<cmd>Telescope file_browser<cr>", { noremap = true })
 vim.keymap.set('n', '<c-f>', require("telescope.builtin").live_grep, { desc = "find" })
 vim.keymap.set('n', '<c-p>', require("telescope.builtin").find_files, { desc = "fuzzy finder" })
--- vim.keymap.set('n', '<c-m>',require("telescope.builtin").marks, {desc = "[m]arks"}) -- has conflicts with command-window (q:)
+vim.keymap.set('n', '<c-m>',require("telescope.builtin").marks, {desc = "[m]arks"}) -- has conflicts with command-window (q:)
 vim.keymap.set('n', '<leader><leader>', require('telescope.builtin').buffers, { desc = 'Find existing buffers' })
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'Find recently opened files' })
 vim.keymap.set('n', '<leader>fc',require("telescope.builtin").colorscheme, {desc = "[c]olorscheme"})

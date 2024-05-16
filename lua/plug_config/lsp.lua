@@ -1,5 +1,9 @@
 require("mason").setup()
 
+-- vim.diagnostic.config({
+--   virtual_text = false,
+-- })
+
 -- OWN LSP ICONS
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -27,7 +31,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 -- -- Enable the following language servers
-local servers = { --[[ "ltex", ]] "texlab", "lua_ls",  "hls", "yamlls", "pyright", "clangd" --[[, "jdtls"]]}
+local servers = { --[[ "ltex", ]] "texlab", "lua_ls",  "hls", "yamlls", "pyright", "clangd", "cmake", "jdtls"}
 
 require("mason-lspconfig").setup{
   ensure_installed = servers,

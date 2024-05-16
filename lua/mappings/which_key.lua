@@ -16,10 +16,20 @@ vim.keymap.set("n", "<leader>xt", "<Plug>PlenaryTestFile", {noremap = true, desc
 
 vim.keymap.set("n", "<leader>t", "<cmd>TSPlaygroundToggle<cr>", {noremap = true, desc = "[t]reesitter playground"})
 
-vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier()<cr>")
-vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")
-vim.keymap.set("v", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
+vim.keymap.set("n", "<leader>z", "<c-w>|<c-w>_", {noremap = true, desc = "[z]en"})
 
-vim.keymap.set("n", "<leader>c", function()
+-- vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier()<cr>")
+-- vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")
+-- vim.keymap.set("v", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
+-- vim.keymap.set("n", "<leader>rt", "<cmd>lua require('refactor').test()<cr>")
+
+vim.keymap.set("n", "<leader>cc", function()
   return ":e " .. vim.fn.expand('%:h') .. "/"
 end, { expr = true, noremap = true, desc = "[c]reate file"})
+
+vim.keymap.set("n", "<leader>ct", function()
+  local fileName = vim.fn.expand('%:t:r') .. "Test.java"
+  local path = vim.fn.expand('%:h')
+  path = path:gsub("main", "test")
+  return ":vertical topleft split " .. path .. "/" .. fileName
+end, {expr = true, noremap = true, desc = "create [t]est"})

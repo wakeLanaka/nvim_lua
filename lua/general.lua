@@ -3,15 +3,15 @@ vim.g.maplocalleader = ' '
 vim.o.breakindent = true -- wrapped text will also get indented
 vim.o.hidden = true -- enable background buffers
 vim.o.ignorecase = true -- ignore case letters when search
-vim.o.mouse = 'a' -- allows working with mouse
+vim.o.mouse = "a" -- allows working with mouse
 vim.o.smartcase = true
-vim.o.spellsuggest='best,10'
+vim.o.spellsuggest="best,10"
 vim.o.termguicolors = true
 -- vim.o.formatoptions = vim.o.formatoptions .. "c"
 vim.o.thesaurus="~/.config/nvim/thesaurus/openthesaurus.txt"
 vim.o.updatetime = 250 -- Decrease update time
 vim.opt.backup = false -- would create a backup-file everytime a file is overwritten
-vim.opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
+vim.opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
 vim.opt.colorcolumn = "80" -- display 80th column
 vim.opt.cursorline = true -- display current row of cursor
 vim.opt.expandtab = true -- use spaces instead of tabs
@@ -32,11 +32,11 @@ vim.opt.tabstop = 2 -- 1 tab == 2 spaces
 vim.opt.textwidth = 80 -- auto new line at 80th column
 vim.opt.undofile = true
 vim.opt.undolevels=1000
-vim.opt.viewdir = '$HOME/.config/nvim/views'
+vim.opt.viewdir = "$HOME/.config/nvim/views"
 vim.opt.writebackup = false
 vim.wo.number = true -- display line numbers
 vim.wo.relativenumber = true -- display relativenumbers to current line
-vim.wo.signcolumn = 'yes' -- where to display icons on number column
+vim.wo.signcolumn = "yes" -- where to display icons on number column
 
 
 -- FUNCTIONS

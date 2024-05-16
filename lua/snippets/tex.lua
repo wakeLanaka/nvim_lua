@@ -1,6 +1,7 @@
 local luaSnip = require("snippets.definitions")
 local ls = require("luasnip")
 local f = ls.function_node
+require("luasnip").config.setup({store_selection_keys="<Tab>"})
 
 local function fn(
   args,     -- text from i(2) in this example i.e. { { "456" } }
@@ -9,6 +10,19 @@ local function fn(
 )
    return args[1][1]
 end
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "documentclass",
+      name = "Create an article",
+      dscr = "Create an article"
+    },
+    {
+      luaSnip.text({"\\documentclass{article}", ""}), luaSnip.insert(0),
+    })
+  }
+})
 
 luaSnip.add_snippets(nil, {
   tex = {
@@ -233,7 +247,7 @@ luaSnip.add_snippets(nil, {
   tex = {
     luaSnip.snip({
       trig = "acrfull",
-      name = "acronym_full",
+      name = "acronym full",
       dscr = "Full acronym"
     },
     {
@@ -245,8 +259,21 @@ luaSnip.add_snippets(nil, {
 luaSnip.add_snippets(nil, {
   tex = {
     luaSnip.snip({
+      trig = "acrlong",
+      name = "acronym long",
+      dscr = "Long acronym"
+    },
+    {
+      luaSnip.text({"\\acrlong{"}), luaSnip.insert(0), luaSnip.text({"}"})
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
       trig = "acrshort",
-      name = "acronym_short",
+      name = "acronym short",
       dscr = "Short acronym"
     },
     {
@@ -435,6 +462,22 @@ luaSnip.add_snippets(nil, {
     })
   }
 })
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "itV",
+      name = "Italic(Visual)",
+      dscr = "make italic"
+    },
+    {
+      f(function(args, snip)
+        local res, env = {}, snip.env
+          for _, ele in ipairs(env.LS_SELECT_RAW) do table.insert(res, "\\textit{" .. ele .. "}") end
+        return res
+      end)
+    })
+  }
+})
 
 luaSnip.add_snippets(nil, {
   tex = {
@@ -463,16 +506,18 @@ luaSnip.add_snippets(nil, {
       dscr = "Create a Tikz Mindmap"
     },
     {
-
+      luaSnip.text({"\\thispagestyle{empty}", ""}),
       luaSnip.text({"\\usepackage{float,lscape}", ""}),
       luaSnip.text({"\\usepackage{tikz}", ""}),
-      luaSnip.text({"\\usetikzlibrary{mindmap}", ""}),
+      luaSnip.text({"\\usetikzlibrary{mindmap, calc}", ""}),
+      luaSnip.text({"\\begin{document}", ""}),
         luaSnip.text({"\\begin{landscape}", ""}),
-        luaSnip.text({"\\begin{tikzpicture}[mindmap, grow cyclic, every node/.style=concept, concept color=white!40, 	level 1/.append style={level distance=5cm,sibling angle=90},	level 2/.append style={level distance=3cm,sibling angle=45}]", ""}),
-        luaSnip.text({"\\node [root concept] {"}), luaSnip.insert(0, "Main Topic"), luaSnip.text({"", ""}),
+        luaSnip.text({"\\resizebox{0.3\\textwidth}{!}{", "\\begin{tikzpicture}[mindmap, grow cyclic, every node/.style=concept,", "root concept/.append style={concept color=black, fill=white, font=\\bfseries\\LARGE},", "level 1/.append style={level distance=5cm, sibling angle=90},", "level 2/.append style={level distance=3cm, sibling angle=45},", "level 3/.append style={level distance=2cm, sibling angle=40},", "every annotation/.append style={concept color=teal!40, text width={}, font=\\tiny}]", ""}),
+        luaSnip.text({"\\node [root concept] (root) {"}), luaSnip.insert(0, "Main Topic"), luaSnip.text({"}", ""}),
       luaSnip.text({";", ""}),
-      luaSnip.text({"\\end{tikzpicture}", ""}),
+      luaSnip.text({"\\end{tikzpicture}}", ""}),
       luaSnip.text({"\\end{landscape}", ""}),
+      luaSnip.text({"\\end{document}", ""}),
     })
   }
 })
@@ -485,7 +530,20 @@ luaSnip.add_snippets(nil, {
       dscr = "Create a Mindmap Child"
     },
     {
-        luaSnip.text({"child[concept color=orange!40]{ node {"}), luaSnip.insert(0), luaSnip.text({"}"})
+        luaSnip.text({"child[concept color=purple!20]{ node {"}), luaSnip.insert(0), luaSnip.text({"}}"})
+    })
+  }
+})
+
+luaSnip.add_snippets(nil, {
+  tex = {
+    luaSnip.snip({
+      trig = "annotation",
+      name = "Create a Mindmap annotation",
+      dscr = "Create a Mindmap annotation"
+    },
+    {
+        luaSnip.text({"\\node[annotation] at ($(root.south east)$) {"}), luaSnip.insert(0), luaSnip.text({"};"})
     })
   }
 })

@@ -1,9 +1,7 @@
-require('mappings/telescope')
-
 require('mappings/git')
-
-require('mappings/vimtex')
-
 require('mappings/lsp')
-
+require('mappings/refactoring')
+require('mappings/telescope')
+require('mappings/vimtex')
+require('mappings/vimwiki')
 require('mappings/which_key')
