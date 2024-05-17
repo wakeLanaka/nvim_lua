@@ -110,3 +110,39 @@ vim.keymap.set({"n", "v"}, "k", function()
         return "gk"
     end
 end, {expr = true, noremap = true})
+
+vim.keymap.set('n', '<space>.', ':e $MYVIMRC<cr>', { noremap = true, desc = "[.]config" })
+vim.keymap.set('n', '<space>hx', ':e $HOME/.config/xmonad/xmonad.hs<cr>', { noremap = true, desc = "[x]monad" })
+vim.keymap.set('n', '<space>hn', ':e $HOME/Sync/Notes/Notes.md<cr>', {noremap = true, desc = "[n]otes"})
+vim.keymap.set("n", "<space>a", "<cmd>AerialToggle!<cr>", { desc = "[a]erial" })
+vim.keymap.set('n', '<space>q', ':bprevious|bd #<cr>', { silent = true, desc = "[q]uit buffer" })
+vim.keymap.set('n', '<space>m', ':messages<cr>', { noremap = true, desc = "[m]essages" })
+vim.keymap.set('n', '<space>n', ':enew<cr>', { noremap = true, desc = "[n]ew buffer" })
+
+-- SPELLING
+vim.keymap.set('n', '<space>ss', "<cmd>set spell!<cr>", { desc = "[s]tart" })
+vim.keymap.set('n', '<space>sd', "<cmd>set spelllang=de<cr>", { desc = "[d]eutsch" })
+vim.keymap.set('n', '<space>se', "<cmd>set spelllang=en<cr>", { desc = "[e]nglish" })
+
+vim.keymap.set("n", "<space>x%", "<cmd>w<cr><cmd>source %<cr>", {noremap = true, desc = "execute current file"})
+vim.keymap.set("n", "<space>xt", "<Plug>PlenaryTestFile", {noremap = true, desc = "[t]est file"})
+
+vim.keymap.set("n", "<space>t", "<cmd>TSPlaygroundToggle<cr>", {noremap = true, desc = "[t]reesitter playground"})
+
+vim.keymap.set("n", "<space>z", "<c-w>|<c-w>_", {noremap = true, desc = "[z]en"})
+
+-- vim.keymap.set("n", "<leader>rp", "<cmd>lua require('refactor').print_identifier()<cr>")
+-- vim.keymap.set("n", "<leader>rd", "<cmd>lua require('refactor').delete_printers()<cr>")
+-- vim.keymap.set("v", "<leader>rx", "<cmd>lua require('refactor').extract_method()<cr>")
+-- vim.keymap.set("n", "<leader>rt", "<cmd>lua require('refactor').test()<cr>")
+
+vim.keymap.set("n", "<space>cc", function()
+  return ":e " .. vim.fn.expand('%:h') .. "/"
+end, { expr = true, noremap = true, desc = "[c]reate file"})
+
+vim.keymap.set("n", "<space>ct", function()
+  local fileName = vim.fn.expand('%:t:r') .. "Test.java"
+  local path = vim.fn.expand('%:h')
+  path = path:gsub("main", "test")
+  return ":vertical topleft split " .. path .. "/" .. fileName
+end, {expr = true, noremap = true, desc = "create [t]est"})
