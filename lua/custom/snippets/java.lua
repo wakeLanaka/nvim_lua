@@ -7,6 +7,18 @@ local i = ls.insert_node
 ls.add_snippets(nil, {
   java = {
     s({
+      trig = "Test",
+      name = "Test",
+      dscr = "Test",
+    },{
+        t("import org.junit.jupiter.api.Test;")
+      })
+  }
+})
+
+ls.add_snippets(nil, {
+  java = {
+    s({
       trig = "doc",
       name = "doc",
       dscr = "create doc"

@@ -12,16 +12,18 @@ return {
         }
       }
 
-      wk.register({f = {name = "[f]ind"}}, {prefix = "<leader>"})
-      wk.register({g = {name = "[g]it"}}, {prefix = "<leader>"})
-      wk.register({l = {name = "[l]sp"}},{prefix = "<leader>"})
-      wk.register({s = {name = "[s]pelling"}},{prefix = "<leader>"})
-      wk.register({v = {name = "[v]imux"}},{prefix = "<leader>"})
-      wk.register({x = {name = "e[x]ecute"}},{prefix = "<leader>"})
-      wk.register({h = {name = "[h]ome"}},{prefix = "<leader>"})
-      wk.register({r = {name = "[r]efactoring"}},{prefix = "<leader>"})
-      wk.register({w = {name = "[w]iki"}},{prefix = "<leader>"})
-      wk.register({c = {name = "[c]reate"}},{prefix = "<leader>"})
+      wk.add({
+        { "<space>f",  group = "[f]ind" },
+        { "<space>g",  group = "[g]it" },
+        { "<space>l",  group = "[l]sp" },
+        { "<space>s",  group = "[s]pelling" },
+        { "<space>v",  group = "[v]imux" },
+        { "<leader>x", group = "e[x]ecute" },
+        { "<space>h",  group = "[h]ome" },
+        { "<space>r",  group = "[r]efactoring" },
+        { "<space>w",  group = "[w]iki" },
+        { "<space>c",  group = "[c]reate" }
+      })
     end
 
   }

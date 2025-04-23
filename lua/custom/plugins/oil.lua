@@ -6,6 +6,7 @@ return {
       require("oil").setup {
         columns = { "icon" },
         keymaps = {
+          ["<C-s>"] = false,
           ["<C-h>"] = false,
           ["<M-h>"] = "actions.select_split",
         },
@@ -13,7 +14,6 @@ return {
           show_hidden = true,
         },
       }
-
       -- Open parent directory in current window
       vim.keymap.set("n", "<C-e>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
     end,

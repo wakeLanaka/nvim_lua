@@ -1,0 +1,23 @@
+return {
+  -- 'mrcjkb/haskell-tools.nvim',
+  -- version = '^4', -- Recommended
+  -- lazy = false,   -- This plugin is already lazy
+  -- config = function()
+  --   local ht = require('haskell-tools')
+  --   local bufnr = vim.api.nvim_get_current_buf()
+  --   -- haskell-language-server relies heavily on codeLenses,
+  --   -- so auto-refresh (see advanced configuration) is enabled by default
+  --   -- vim.keymap.set('n', '<space>cl', vim.lsp.codelens.run, { noremap = true, silent = true, buffer = bufnr, desc = "" })
+  --   -- Hoogle search for the type signature of the definition under the cursor
+  --   vim.keymap.set('n', '<space>lh', ht.hoogle.hoogle_signature,
+  --     { noremap = true, silent = true, buffer = bufnr, desc = "[h]oogle" })
+  --   -- Evaluate all code snippets
+  --   vim.keymap.set('n', '<space>le', ht.lsp.buf_eval_all,
+  --     { noremap = true, silent = true, buffer = bufnr, desc = "[e]valuate" })
+  --   -- Toggle a GHCi repl for the current buffer
+  --   vim.keymap.set('n', '<space>lR', function()
+  --     ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+  --   end, { noremap = true, silent = true, buffer = bufnr, desc = "[R]epl" })
+  --   vim.keymap.set('n', '<space>l-', 'i-- >>> ', { noremap = true, silent = true, buffer = bufnr })
+  -- end
+}

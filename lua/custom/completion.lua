@@ -8,7 +8,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "path" },
-    { name = "buffer" },
+    -- { name = "buffer" },
   },
   mapping = {
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -16,8 +16,12 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-n>"] = cmp.mapping(function ()
+      cmp.select_next_item { behavior = cmp.SelectBehavior.Insert }
+    end, {'i', 's', 'c'}),
+    ["<C-p>"] = cmp.mapping(function ()
+      cmp.select_prev_item { behavior = cmp.SelectBehavior.Insert }
+    end, {'i', 's', 'c'}),
     ["<TAB>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
@@ -37,7 +41,6 @@ cmp.setup {
 }
 
 cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' },
     { name = 'path' }
@@ -57,6 +60,8 @@ ls.config.set_config {
   history = false,
   updateevents = "TextChanged,TextChangedI",
 }
+local haskell_snippets = require('haskell-snippets').all
+ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
   loadfile(ft_path)()

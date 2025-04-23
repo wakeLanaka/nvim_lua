@@ -4,8 +4,7 @@ return {
     dependencies = {
     },
     build = ":TSUpdate",
-    branch = "main",
-    lazy = false,
+    -- lazy = false,
     config = function()
       require "custom.treesitter"
     end,
