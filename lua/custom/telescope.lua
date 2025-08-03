@@ -30,13 +30,6 @@ pcall(require("telescope").load_extension, "hoogle")
 
 local builtin = require "telescope.builtin"
 
-local function current_buffer_fuzzy_find_descending()
-  builtin.current_buffer_fuzzy_find({
-    sorter = sorters.get_generic_fuzzy_sorter({}),
-    sorting_strategy = 'descending'
-  })
-end
-
 vim.keymap.set("n", "<C-p>", builtin.find_files)
 vim.keymap.set("n", "<C-f>", builtin.live_grep)
 vim.keymap.set("n", "<space>fh", builtin.help_tags, { desc = "[h]elp tags" })

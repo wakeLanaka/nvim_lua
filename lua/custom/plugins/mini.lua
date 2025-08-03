@@ -8,7 +8,7 @@ return {
           comment = 'gc',
           comment_line = '<c-_>',
           comment_visual = '<c-_>',
-          -- textobject = 'gl',
+          textobject = 'gc',
         }
       }
       require("mini.surround").setup {
@@ -16,12 +16,12 @@ return {
           add = 'ys',
           delete = 'ds',
           replace = 'cs',
+          highlight = '<space>%',
           find = '',
           find_left = '',
-          highlight = '<space>%',
+          suffix_last = '',
+          suffix_next = '',
           update_n_lines = '',
-          suffix_last = 'l',
-          suffix_next = 'n',
         }
       }
     end,
