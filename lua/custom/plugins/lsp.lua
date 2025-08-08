@@ -13,16 +13,24 @@ return {
           },
         },
       },
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      {
+        "mason-org/mason.nvim",
+        opts = {}
+      },
+      {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+          { "mason-org/mason.nvim", opts = {} },
+          "neovim/nvim-lspconfig",
+        },
+      },
       'mfussenegger/nvim-jdtls',
       { 'j-hui/fidget.nvim', opts = {} },
       'b0o/SchemaStore.nvim',
     },
     config = function()
       local mason = require("mason")
-      local mason_tool_installer = require("mason-tool-installer")
       local lspconfig = require("lspconfig")
       local lazydev = require("lazydev")
 
@@ -49,7 +57,6 @@ return {
       }
 
       vim.list_extend(ensure_installed, servers_to_install)
-      mason_tool_installer.setup { ensure_installed = ensure_installed }
 
       for name, config in pairs(servers) do
         if config == true then

@@ -16,12 +16,12 @@ cmp.setup {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
-    ["<C-n>"] = cmp.mapping(function ()
+    ["<C-n>"] = cmp.mapping(function()
       cmp.select_next_item { behavior = cmp.SelectBehavior.Insert }
-    end, {'i', 's', 'c'}),
-    ["<C-p>"] = cmp.mapping(function ()
+    end, { 'i', 's', 'c' }),
+    ["<C-p>"] = cmp.mapping(function()
       cmp.select_prev_item { behavior = cmp.SelectBehavior.Insert }
-    end, {'i', 's', 'c'}),
+    end, { 'i', 's', 'c' }),
     ["<TAB>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
