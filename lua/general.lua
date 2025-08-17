@@ -64,13 +64,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- don't auto commenting new lines
 vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
-
--- When editing a file, always jump to the last known cursor position.
--- Don't do it for commit messages, when the position is invalid, or when
--- inside an event handler (happens when dropping a file on gvim).
-vim.api.nvim_exec([[
-autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-]], false)

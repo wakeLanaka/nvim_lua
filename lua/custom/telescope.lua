@@ -33,7 +33,7 @@ local builtin = require "telescope.builtin"
 vim.keymap.set("n", "<C-p>", builtin.find_files)
 vim.keymap.set("n", "<C-f>", builtin.live_grep)
 vim.keymap.set("n", "<space>fh", builtin.help_tags, { desc = "[h]elp tags" })
--- vim.keymap.set("n", "<space>/", current_buffer_fuzzy_find_descending)
+vim.keymap.set("n", "<space>/", builtin.current_buffer_fuzzy_find, { desc = "[/] current buffer" })
 vim.keymap.set("n", "<space>fw", builtin.grep_string, { desc = "[w]ord" })
 vim.keymap.set("n", "<space>fu", builtin.lsp_references, { desc = "[u]sages" })
 vim.keymap.set("n", "<space>f.", function()

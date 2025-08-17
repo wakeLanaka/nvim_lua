@@ -25,9 +25,7 @@ return {
           "neovim/nvim-lspconfig",
         },
       },
-      'mfussenegger/nvim-jdtls',
-      { 'j-hui/fidget.nvim', opts = {} },
-      'b0o/SchemaStore.nvim',
+      { 'j-hui/fidget.nvim', opts = {} }
     },
     config = function()
       local mason = require("mason")
@@ -59,16 +57,12 @@ return {
       vim.list_extend(ensure_installed, servers_to_install)
 
       for name, config in pairs(servers) do
-        if config == true then
-          config = {}
-        end
         config = vim.tbl_deep_extend('force', vim.deepcopy({ capabilities = capabilities }), config)
-
         lspconfig[name].setup(config)
       end
 
       local disable_semantic_tokens = {
-        lua = true,
+        lua = true
       }
 
       vim.api.nvim_create_autocmd('LspAttach', {

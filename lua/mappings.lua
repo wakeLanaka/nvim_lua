@@ -129,8 +129,6 @@ vim.keymap.set('n', '<space>se', "<cmd>set spelllang=en<cr>", { desc = "[e]nglis
 vim.keymap.set("n", "<space>x%", "<cmd>w<cr><cmd>source %<cr>", { noremap = true, desc = "execute current file" })
 vim.keymap.set("n", "<space>xt", "<Plug>PlenaryTestFile", { noremap = true, desc = "[t]est file" })
 
-vim.keymap.set("n", "<space>t", "<cmd>TSPlaygroundToggle<cr>", { noremap = true, desc = "[t]reesitter playground" })
-
 vim.keymap.set("n", "<space>z", "<c-w>|<c-w>_", { noremap = true, desc = "[z]en" })
 
 vim.keymap.set("n", "<a-o>", "<a-o><esc>", { noremap = true })

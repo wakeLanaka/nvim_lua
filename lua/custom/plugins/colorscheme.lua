@@ -3,8 +3,12 @@ return {
     "catppuccin/nvim",
     lazy = false,
     priority = 1000,
-    config = function ()
+    config = function()
       require("catppuccin").setup {
+        float = {
+          transparent = false,
+          solid = false
+        },
         flavour = "mocha",
         term_colors = true,
         integrations = {
@@ -13,7 +17,7 @@ return {
         },
         custom_highlights = function(colors)
           return {
-            LineNr = {fg = colors.overlay0}
+            LineNr = { fg = colors.overlay0 }
           }
         end,
       }

@@ -60,8 +60,6 @@ ls.config.set_config {
   history = false,
   updateevents = "TextChanged,TextChangedI",
 }
-local haskell_snippets = require('haskell-snippets').all
-ls.add_snippets('haskell', haskell_snippets, { key = 'haskell' })
 
 for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
   loadfile(ft_path)()
