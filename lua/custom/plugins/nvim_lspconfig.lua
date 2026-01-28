@@ -18,7 +18,7 @@ return {
             "build.ninja"
           )(fname) or require("lspconfig.util").root_pattern("compile_commands.json", "compile_flags.txt")(
             fname
-          ) or require("lspconfig.util").find_git_ancestor(fname)
+          ) or vim.fs.dirname(vim.fs.find('.git', { path = startpath, upward = true })[1])
         end,
         capabilities = {
           offsetEncoding = { "utf-16" },
@@ -41,7 +41,6 @@ return {
     },
     setup = {
       clangd = function(_, opts)
-
         local clangd = require("clangd_extensions")
         local clangd_ext_opts = clangd.opts()
         require("clangd_extensions").setup(vim.tbl_deep_extend("force", clangd_ext_opts or {}, { server = opts }))

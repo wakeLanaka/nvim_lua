@@ -64,7 +64,7 @@ return {
         end
         config = vim.tbl_deep_extend('force', vim.deepcopy({ capabilities = capabilities }), config)
 
-        lspconfig[name].setup(config)
+        vim.lsp.config(name, config)
       end
 
       local disable_semantic_tokens = {

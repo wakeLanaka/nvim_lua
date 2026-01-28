@@ -38,8 +38,7 @@ vim.opt.writebackup = false
 vim.wo.number = true         -- display line numbers
 vim.wo.relativenumber = true -- display relativenumbers to current line
 vim.wo.signcolumn = "yes"    -- where to display icons on number column
-
-
+vim.opt.path:append('**')
 
 
 -- FUNCTIONS

@@ -483,6 +483,19 @@ ls.add_snippets(nil, {
 ls.add_snippets(nil, {
   tex = {
     s({
+      trig = "li",
+      name = "lstinline",
+      dscr = "make lstinline"
+    },
+    {
+        t({ "\\lstinline{" }), i(0), t({ "}" })
+    })
+  }
+})
+
+ls.add_snippets(nil, {
+  tex = {
+    s({
       trig = "cgraphics",
       name = "Center Graphics",
       dscr = "Center Graphics"
